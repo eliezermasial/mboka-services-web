@@ -1,6 +1,9 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Oswald } from "next/font/google";
 import "./globals.css";
+import type { Metadata } from "next";
+import { Header } from "@/components/layouts/Header";
+import { Foooter } from "@/components/layouts/Footer";
+import { Geist, Geist_Mono, Oswald } from "next/font/google";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,13 +27,15 @@ export const metadata: Metadata = {
 };
 
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+
+export default function LayoutLocal({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
-    </html>
+    <div className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} h-full antialiased`}>
+      <Header />
+      <main>
+        {children}
+      </main>
+      <Foooter />
+    </div>
   );
 }
