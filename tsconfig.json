@@ -19,7 +19,10 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@/lib/*": ["./lib/*"],
+      "@/public/*": ["./public/*"],
+      "@/dictionnaires/*": ["./dictionnaires/*"]
     }
   },
   "include": [

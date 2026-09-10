@@ -1,8 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
+import {NextIntlClientProvider} from 'next-intl';
 import { Header } from "@/components/layouts/Header";
 import { Foooter } from "@/components/layouts/Footer";
 import { Geist, Geist_Mono, Oswald } from "next/font/google";
+
 
 
 const geistSans = Geist({
@@ -27,15 +30,19 @@ export const metadata: Metadata = {
 };
 
 
+export default async function LayoutLocal({ children }: LayoutProps<"/">) {
 
-export default function LayoutLocal({ children }: LayoutProps<"/">) {
+  const messages = await getMessages();
+
   return (
-    <div className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} h-full antialiased`}>
-      <Header />
-      <main>
-        {children}
-      </main>
-      <Foooter />
-    </div>
+    <NextIntlClientProvider messages={messages}>
+      <div className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} h-full antialiased`}>
+        <Header />
+        <main>
+          {children}
+        </main>
+        <Foooter />
+      </div>
+    </NextIntlClientProvider>
   );
 }
