@@ -7,6 +7,7 @@
   --gold: #d6a62a;
   --primary: #0F2A43;
   --onPrimary: #3B82F6;
+  --text: #374151cc;
 }
 
 @theme inline {
@@ -16,12 +17,14 @@
   --color-text: var(--text);
   --color-primary: var(--primary);
   --color-onPrimary: var(--onPrimary);
+  --color-text: var(--text);
   
   --breakpoint-xs: 400px;
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-oswald: var(--font-oswald);
+  --font-pacifico: var(--font-pacifico);
 
 }
 
@@ -31,6 +34,9 @@
     --foreground: #ededed;
     --gold: #d6a62a;
     --text: #374151cc;
+    --primary: #0F2A43;
+    --onPrimary: #3B82F6;
+      --text: #374151cc;
   }
 }
 .display-lg {
@@ -43,6 +49,21 @@
     font-size: 2.5rem;
     line-height: 1.1;
   }
+}
+
+@keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: scale(1.08);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1.55);
+    }
+}
+
+.animate-fade-in {
+  animation: fade-in 2.2s ease-out forwards;
 }
 
 body {
