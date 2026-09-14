@@ -3,7 +3,9 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 
 export const withNextIntl = createNextIntlPlugin();
+
 const nextConfig: NextConfig = {
+  reactStrictMode: true,
   turbopack: {}
 };
 

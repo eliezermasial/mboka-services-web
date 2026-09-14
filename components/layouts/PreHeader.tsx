@@ -5,16 +5,19 @@ import { cn } from "@/lib/utils/cn";
 import { MapPin } from "lucide-react";
 import { Container } from "../ui/Container";
 import { LanguageSwitcher } from "../navigations/LanguageSwitcher";
+import { useScroll } from "@/hooks/useScroll";
 
 
 export function PreHedear () {
-
+    const isScrolled = useScroll();
     return (
-        <div className={cn(`bg-linear-to-r from-primary to-onPrimary/65 py-2`)}>
+        <div className={cn(`bg-linear-to-r from-primary to-onPrimary/65 py-2`,
+            isScrolled ? "hidden" : "relative transition-discrete"
+        )}>
             <Container className={cn("flex h-10 items-center text-sm font-oswald justify-between")}> 
                 <div className="flex items-center gap-5">
                     <MapPin size={18} />
-                    <span className="font-normal text-white/70">Elche, Alicante </span>
+                    <span className="font-normal text-white/70">Kinshasa, RDC </span>
                 </div>
                 <div className={cn("flex justify-around gap-5 text-md")}>
                     <div className=" hidden md:flex justify-between items-center text-white/70 gap-4">

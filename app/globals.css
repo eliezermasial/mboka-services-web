@@ -8,6 +8,7 @@
   --primary: #0F2A43;
   --onPrimary: #3B82F6;
   --text: #374151cc;
+  --or: #D4AF37;
 }
 
 @theme inline {
@@ -18,6 +19,7 @@
   --color-primary: var(--primary);
   --color-onPrimary: var(--onPrimary);
   --color-text: var(--text);
+  --color-or: var(--or);
   
   --breakpoint-xs: 400px;
 
@@ -36,7 +38,8 @@
     --text: #374151cc;
     --primary: #0F2A43;
     --onPrimary: #3B82F6;
-      --text: #374151cc;
+    --text: #374151cc;
+    --or: #D4AF37;
   }
 }
 .display-lg {
