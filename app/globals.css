@@ -3,21 +3,70 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --text: #374151cc;
+  --gold: #d6a62a;
+  --primary: #0F2A43;
+  --onPrimary: #3B82F6;
+  --text: #374151cc;
+  --or: #D4AF37;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-gold: var(--gold);
+  --color-text: var(--text);
+  --color-primary: var(--primary);
+  --color-onPrimary: var(--onPrimary);
+  --color-text: var(--text);
+  --color-or: var(--or);
+  
+  --breakpoint-xs: 400px;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-oswald: var(--font-oswald);
+  --font-pacifico: var(--font-pacifico);
+
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --gold: #d6a62a;
+    --text: #374151cc;
+    --primary: #0F2A43;
+    --onPrimary: #3B82F6;
+    --text: #374151cc;
+    --or: #D4AF37;
   }
+}
+.display-lg {
+  font-size: 4.5rem;
+  line-height: 1.1;
+}
+
+@media (max-width: 1024px) {
+  .display-lg {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+}
+
+@keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: scale(1.08);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1.55);
+    }
+}
+
+.animate-fade-in {
+  animation: fade-in 2.2s ease-out forwards;
 }
 
 body {
