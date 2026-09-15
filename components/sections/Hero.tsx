@@ -48,7 +48,7 @@ export function Hero() {
     }, []);
 
     return (
-        <Section className="relative overflow-hidden z-10 max-md:px-3 h-full mb-60">
+        <Section className="relative overflow-hidden z-10 max-md:px-3 h-full">
             <Image
                 key={currentImageIndex}
                 src={images[currentImageIndex].src}
