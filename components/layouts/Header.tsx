@@ -1,17 +1,30 @@
 "use client";
 
-
+import { useState } from "react";
 import { Logo } from "../ui/Logo";
 import { cn } from "@/lib/utils/cn";
+import { FormHeader } from "./FormHeader";
 import { Container } from "../ui/Container";
 import { useScroll } from "@/hooks/useScroll";
 import { TextAlignCenter } from "lucide-react";
 import { Navigation } from "../navigations/Navigation";
-import { FormHeader } from "./FormHeader";
+import { MenuMobile } from "../navigations/MenuMobil";
 
 
 export function Header () {
     const isScrolled = useScroll();
+    const [openMobil, setIsOpen] = useState<boolean>(false);
+
+    const handleOpenMobil = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        setIsOpen(true);
+    }
+
+    const handleClosed = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+
+        setIsOpen(false);
+    }
 
     return (
         <header className={cn(`h-17 w-full transition-discrete bg-white
@@ -33,11 +46,15 @@ export function Header () {
                     </button>
                     <button className={cn(`flex justify-center items-center lg:hidden p-1
                         border-2 border-primary/25 rounded-lg shadow shadow-primary/15 cursor-pointer`)}
+                        onClick={handleOpenMobil}
                     >
                         <TextAlignCenter size={27} className="text-primary"/>
                     </button>
                 </div>
             </Container>
+            {openMobil && (
+                <MenuMobile handleClosed={handleClosed} />
+            )}
         </header>
     )
 }
