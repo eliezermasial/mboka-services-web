@@ -21,7 +21,7 @@
   --color-onPrimary: var(--onPrimary);
   --color-text: var(--text);
   --color-or: var(--or);
-  --color-cmyk: var(--cmyk)
+  --color-cmyk: var(--cmyk);
   
   --breakpoint-xs: 400px;
 
