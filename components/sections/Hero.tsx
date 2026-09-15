@@ -48,7 +48,7 @@ export function Hero() {
     }, []);
 
     return (
-        <Section className="relative overflow-hidden z-10 max-md:px-3 h-full mb-60">
+        <Section className="relative overflow-hidden z-10 max-md:px-3 h-full">
             <Image
                 key={currentImageIndex}
                 src={images[currentImageIndex].src}
@@ -63,11 +63,11 @@ export function Hero() {
                 via-[#01241f]/90 via-70% to-gold/40 border-none`
             )}/>
 
-            <Container className="relative z-10 flex flex-col h-full justify-center max-md:items-center scale-105">
-                <div className="flex flex-col gap-5 md:gap-5 max-md:px-0 md:px-6">
+            <Container className="relative z-10 flex h-full  max-md:items-center scale-105">
+                <div className="flex flex-col w-full gap-5 max-md:px-0 md:px-3 lg:px-6">
                     <div className="mt-10">
-                        <div className="flex absolute left-4 md:left-14 top-3 md:-top-1 z-10 justify-start items-center gap-3
-                            bg-white/20 px-3 py-1 rounded-xl shadow shadow-onPrimary/20"
+                        <div className="flex absolute left-4 md:left-6 lg:left-14 top-3 md:-top-1 items-center gap-3
+                            bg-white/20 px-3 py-1 rounded-xl shadow shadow-onPrimary/20 justify-start z-10"
                         >
                             <span className="text-xs uppercase text-or/80 font-sans font-medium">
                                 excellence & conciergerie operrationnelle
@@ -91,7 +91,7 @@ export function Hero() {
                             </p>
                         </div>
                     </div>
-                    <div className="flex justify-start gap-5 py-1 lg:w-[70%] ">
+                    <div className="flex justify-start gap-5 py-1 mt-3 lg:w-[70%] ">
                         <Button className="group bg-gold max-md:w-full hover:bg-or/80 border-2 border-or text-primary">
                             {"RequestQuote"}
                             <span className="transition-transform translate-x-2 duration-400
@@ -107,13 +107,13 @@ export function Hero() {
                         </Button>
                     </div>
 
-                    <div className=" flex max-md:flex-col lg:mt-15 max-md:items-center gap-3 lg:gap-5 justify-between">
+                    <div className=" flex max-lg:flex-col mt-3 md:mt-7 lg:mt-15 max-md:items-center gap-3 lg:gap-5 justify-between">
                         {trustStats.map((stat) => {
 
                             const Icon = stat.icon
 
                             return (
-                                <div key={stat.value} className="flex gap-3 items-center w-full md:w-[30%] bg-primary 
+                                <div key={stat.value} className="flex gap-3 items-center w-full lg:w-[30%] bg-primary 
                                     rounded-lg shadow-sm shadow-white/15 hover:bg-primary/80  px-6 py-3"
                                 >
                                     <div className="bg-white/15 border border-gold/15 p-2 rounded-lg">

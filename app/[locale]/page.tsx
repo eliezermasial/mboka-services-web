@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
+import { AboutUs } from "@/features/home/components/AboutUs";
 
 
 export default function HomePage () {
@@ -6,6 +7,7 @@ export default function HomePage () {
     <>
       
       <Hero />
+      <AboutUs />
     </>
   )
 }
