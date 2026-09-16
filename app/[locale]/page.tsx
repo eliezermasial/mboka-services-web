@@ -1,5 +1,6 @@
 import { Hero } from "@/components/sections/Hero";
 import { AboutUs } from "@/features/home/components/AboutUs";
+import { Habitats } from "@/features/home/components/Habitats";
 import { ServiceDomains } from "@/features/home/components/ServiceDomains";
 
 
@@ -9,6 +10,7 @@ export default function HomePage () {
       <Hero />
       <AboutUs />
       <ServiceDomains />
+      <Habitats />
     </>
   )
 }

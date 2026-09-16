@@ -13,8 +13,8 @@ export function ServiceDomains () {
     
     return (
         <Section className="bg-primary/55">
-            <Container>
-                <div className="flex flex-col gap-15 overflow-x-hidden max-md:scale-105 py-20 md:py-10 md:gap-20">
+            <Container className="max-md:py-30">
+                <div className="flex flex-col gap-15 overflow-x-hidden max-md:scale-105 md:py-10 md:gap-20">
                     <div className="flex gap-10 items-center max-md:flex-col justify-center">
                         <div>
                             <div className="flex flex-col items-center">

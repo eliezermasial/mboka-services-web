@@ -55,7 +55,7 @@ export function Hero() {
                 alt="image champs"
                 fill
                 loading="eager"
-                className={cn(`block absolute inset-y-0 w-full bg-cover bg-center bg-no-repeat scale-115`,
+                className={cn(`block absolute inset-y-0 w-full bg-cover max-md:object-cover bg-center bg-no-repeat scale-115`,
                     "scale-115", "animate-fade-in"
                 )}
             />

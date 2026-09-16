@@ -5,7 +5,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 const navLinks = [
     {key: "home", href: "/"},
     {key: "Services", href: "/services"},
-    {key: "evenement", href: "/event"},
+    {key: "Événements", href: "/events"},
     {key: "about", href: "/about"},
     {key: "contact", href: "/contact"},
 ] as const
