@@ -55,7 +55,7 @@ export function AboutUs() {
                     </div>
                     <div className="relative md:pl-10 max-md:scale-105 ">
                         <div className="flex items-center gap-3">
-                            <span className="text-xs font-sans font-bold uppercase tracking-[0.25em] text-onPrimary">
+                            <span className="text-xs font-pacifico font-medium uppercase tracking-[0.25em] text-onPrimary">
                                 {"WHO-WE-ARE"} ?
                             </span>
                         </div>

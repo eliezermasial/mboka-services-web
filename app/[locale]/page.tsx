@@ -1,13 +1,14 @@
 import { Hero } from "@/components/sections/Hero";
 import { AboutUs } from "@/features/home/components/AboutUs";
+import { ServiceDomains } from "@/features/home/components/ServiceDomains";
 
 
 export default function HomePage () {
   return (
     <>
-      
       <Hero />
       <AboutUs />
+      <ServiceDomains />
     </>
   )
 }
