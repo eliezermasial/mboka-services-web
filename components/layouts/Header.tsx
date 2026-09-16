@@ -39,8 +39,8 @@ export function Header () {
                 
                 <div className="flex justify-baseline items-center gap-5 ">
                     <FormHeader />
-                    <button className="bg-linear-to-r from-primary/78 to-onPrimary px-6 py-2 transition-all
-                        rounded-xl text-white/85 font-oswald shadow shadow-onPrimary/35 hover:from-primary/60"
+                    <button className="bg-linear-to-r from-primary/78 to-onPrimary hover:from-primary/60 px-6 py-2
+                        rounded-xl text-white/85 font-oswald shadow shadow-onPrimary/35 transition-all"
                     >
                         Request Quote
                     </button>
