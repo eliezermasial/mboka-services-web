@@ -87,6 +87,5 @@ export const domains = [
     description: "Nettoyage professionnel et billetterie de voyage.",
     image: "/artisan1.jpg",
     href: "/services/services-sociaux",
-
   },
 ] as const;

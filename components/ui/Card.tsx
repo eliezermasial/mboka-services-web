@@ -23,7 +23,7 @@ export function CardTitle({
 }: HTMLAttributes<HTMLHeadingElement>) {
   return (
     <h3
-      className={cn("text-xl font-semibold tracking-normal", className)}
+      className={cn("text-xl font-semibold font-oswald leading-tight tracking-normal capitalize", className)}
       {...props}
     />
   );
@@ -35,7 +35,7 @@ export function CardParagraphy({
 }: HTMLAttributes<HTMLParagraphElement>) {
   return (
     <p 
-      className={cn(className)}
+      className={cn(`max-w-85 font-sans font-medium leading-relaxed text-white/75`,className)}
       {...props}
     />
   )
