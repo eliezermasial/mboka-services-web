@@ -15,7 +15,7 @@ export function Habitats () {
                 <div className="flex flex-col gap-15 overflow-x-hidden max-md:scale-105 md:py-10 md:gap-15">
                     <div className="flex max-md:flex-col p-2 justify-between gap-5 max-md:gap-8">
                         <div>
-                            <div className="flex flex-col justify-center">
+                            <div className="flex flex-col justify-center max-md:items-center">
                                 <span className="text-gold leading-[1.05] font-pacifico
                                     font-medium uppercase tracking-[0.25em] text-xs"
                                 >
@@ -24,12 +24,12 @@ export function Habitats () {
                                 <div className="flex items-center">
                                     <hr className="text-gold/65 w-24"/>
                                     <Dot size={30} className="text-or" />
-                                    <hr className="text-gold/65  w-24"/>
+                                    <hr className="text-gold/65 w-24 lg:w-32"/>
                                 </div>
                             </div>
                             <div className="scale-100">
                                 <h2 className="text-3xl mb-5 md:text-5xl mt-5 max-w-3xl 
-                                    font-oswald text-white leading-[1.05]"
+                                    font-oswald text-white leading-[1.05] max-md:text-center"
                                 >
                                     {"Des solutions d’habitat pensées pour votre quotidien"}
                                 </h2>
@@ -72,6 +72,7 @@ export function Habitats () {
                                     border-2 border-white shadow-none"
                                 >
                                     <Image src={item.image} alt={item.title} fill loading="lazy"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                         className="object-cover rounded-2xl"
                                     />
                                 </Card>
