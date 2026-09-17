@@ -89,3 +89,10 @@ export const domains = [
     href: "/services/services-sociaux",
   },
 ] as const;
+
+export const events = [
+  {name: "salle de fetes", descr: "pour vos fetes", src: "/salle-fete.jpg"},
+  {name: "conference", descr: "pour vos conferences et reunion", src: "/salle-vide.jpg"},
+  {name: "reunions", descr: "des cuisines de qualite", src: "/salle-reunion.jpg"},
+  {name: "restaurant", descr: "des cuisines de qualite", src: "/restaurant.jpg"},
+]
