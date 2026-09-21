@@ -5,14 +5,13 @@ import { cn } from "@/lib/utils/cn";
 import { MapPin } from "lucide-react";
 import { Container } from "../ui/Container";
 import { LanguageSwitcher } from "../navigations/LanguageSwitcher";
-import { useScroll } from "@/hooks/useScroll";
 
 
 export function PreHedear () {
-    const isScrolled = useScroll();
+
     return (
-        <div className={cn(`bg-linear-to-r from-primary to-onPrimary/65 py-2`,
-            isScrolled ? "hidden" : "relative transition-discrete"
+        <div className={cn(`fixed z-100 top-0 w-full bg-linear-to-r from-primary to-onPrimary/65 py-2`,
+            
         )}>
             <Container className={cn("flex h-10 items-center text-sm font-oswald justify-between")}> 
                 <div className="flex items-center gap-5">

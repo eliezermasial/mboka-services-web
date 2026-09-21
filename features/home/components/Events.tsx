@@ -1,17 +1,20 @@
 "use client"
-import { Dot } from "lucide-react";
+
+import Image from "next/image";
+import { useState } from "react";
+import { cn } from "@/lib/utils/cn";
+import { events } from "@/lib/constants";
+import { Badge } from "@/components/ui/Badge";
+import { Dot, MoveUpRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import Image from "next/image";
-import { useState } from "react";
-import { events } from "@/lib/constants";
-import { cn } from "@/lib/utils/cn";
-import { Badge } from "@/components/ui/Badge";
 
 
 export function Events() {
+
     const [currentIndexImage, setCurrentIndexImage] = useState<number>(0)
+    const url = events[currentIndexImage].slug;
     
     const handleChangeImage = (index: number) => {
         setCurrentIndexImage(index);
@@ -21,10 +24,10 @@ export function Events() {
         <Section className="bg-white/90">
             <Container className="max-md:py-20">
                 <div className="flex flex-col gap-15 overflow-x-hidden max-md:scale-105 md:py-10">
-                    <div className="flex max-md:flex-col justify-between gap-8 max-md:gap-10">
-                        <div>
+                    <div className="flex flex-col justify-between gap-8 max-md:gap-10">
+                        <div className="flex flex-col items-center md:mb-15">
                             <div className="flex flex-col justify-center max-md:items-center">
-                                <span className="text-gold leading-[1.05] font-pacifico
+                                <span className="text-onPrimary text-center leading-[1.05] font-pacifico
                                     font-medium uppercase tracking-[0.25em] text-xs"
                                 >
                                     {"Événements"}
@@ -35,22 +38,22 @@ export function Events() {
                                     <hr className="text-gold/65 w-24"/>
                                 </div>
                             </div>
-                            <div className="scale-100">
-                                <h2 className="text-3xl md:text-5xl mt-5 max-w-2xl leading-[1.05]
-                                    font-oswald text-primary max-md:text-center">
+                            <div className="scale-100 mt-5">
+                                <h2 className="text-3xl md:text-5xl max-w-2xl leading-[1.05]
+                                    font-oswald text-primary text-center">
                                     {"Des espaces prêts pour recevoir, célébrer et réunir"}
                                 </h2>
                             </div>
                         </div>
-                        <div className="flex flex-col md:items-end-safe md:mt-12 scale-100 gap-8">
-                            <p className="md:max-w-xl leading-relaxed text-black/55 md:text-end text-md">
+                        <div className="flex max-md:flex-col scale-100 gap-8 justify-between">
+                            <p className="max-w-2xl leading-relaxed text-black/55 text-base">
                                 {"Mariage, conférence, réception ou cérémonie libre : choisissez l'espace adapte, puis contactez-nous pour recevoir une proposition selon votre date, votre format et vos besoins."}
                             </p>
                             
-                            <Button href="machinery" className="bg-transparent text-onPrimary border-onPrimary
+                            <Button href="events" className="bg-transparent text-onPrimary border-onPrimary
                                 border-3 hover:bg-onPrimary hover:text-white whitespace-nowrap md:w-52"
                             >
-                                {"Solliciter un prix"}
+                                {"Nos evenements"}
                             </Button>
                         </div>
                     </div>
@@ -64,6 +67,7 @@ export function Events() {
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"
                                 className="object-cover transition-transform duration-500 hover:scale-105"
+
                             />
 
                             <div className="absolute inset-0 bg-black/20" />
@@ -71,6 +75,11 @@ export function Events() {
                             <Badge className="font-oswald">
                                 {events[currentIndexImage].name}
                             </Badge>
+
+                            <Button href={`${url}`} className="absolute z-50 bottom-7 md:bottom-18 border-2 border-white right-5 md:right-10 rounded-full
+                             bg-primary/25 w-15 h-15">
+                                <MoveUpRight size={20} className="text-white w-full" />
+                            </Button>
 
                             <div className="absolute inset-x-0 bottom-0 md:bottom-10 z-10 p-5">
                                 <h2 className="text-4xl font-bold font-oswald capitalize text-white">
@@ -104,6 +113,7 @@ export function Events() {
                                     className="object-cover rounded-3xl"
                                 />
                             </div>
+                            
                             <h3 className="font-oswald text-3xl font-bold leading-tight text-primary">
                                 Nos propositions
                             </h3>
@@ -113,7 +123,7 @@ export function Events() {
                                         className={cn(`rounded-xl border border-primary/20 p-2 shadow-sm text-sm
                                             font-bold transition-all duration-100 capitalize hover:text-gold/85`,
                                             currentIndexImage === index ?
-                                            "bg-primary/65 text-white/85 hover:text-none":"bg-white text-primary/85"
+                                            "bg-primary/65 text-white/85 text-nowrap hover:text-none":"bg-white text-primary/85"
                                         )}
                                         onClick={()=>handleChangeImage(index)}
                                     >

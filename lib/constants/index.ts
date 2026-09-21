@@ -91,8 +91,8 @@ export const domains = [
 ] as const;
 
 export const events = [
-  {name: "salle de fetes", descr: "pour vos fetes", src: "/salle-fete.jpg"},
-  {name: "conference", descr: "pour vos conferences et reunion", src: "/salle-vide.jpg"},
-  {name: "reunions", descr: "des cuisines de qualite", src: "/salle-reunion.jpg"},
-  {name: "restaurant", descr: "des cuisines de qualite", src: "/restaurant.jpg"},
+  {name: "salle de fetes", descr: "pour vos fetes", src: "/salle-fete.jpg", slug: "salle-de-fetes"},
+  {name: "conference", descr: "pour vos conferences et reunion", src: "/salle-vide.jpg", slug: "conference"},
+  {name: "reunions", descr: "des reunions de qualite", src: "/salle-reunion.jpg", slug: "reunions"},
+  {name: "restaurant", descr: "des cuisines de qualite", src: "/restaurant.jpg", slug: "restaurant"},
 ]
