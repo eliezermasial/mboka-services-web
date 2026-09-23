@@ -91,8 +91,56 @@ export const domains = [
 ] as const;
 
 export const events = [
-  {name: "salle de fetes", descr: "pour vos fetes", src: "/salle-fete.jpg", slug: "salle-de-fetes"},
-  {name: "conference", descr: "pour vos conferences et reunion", src: "/salle-vide.jpg", slug: "conference"},
-  {name: "reunions", descr: "des reunions de qualite", src: "/salle-reunion.jpg", slug: "reunions"},
-  {name: "restaurant", descr: "des cuisines de qualite", src: "/restaurant.jpg", slug: "restaurant"},
-]
+  {
+    name: "Location",
+    descr: "Des espaces adaptés pour accueillir vos fêtes, conférences, réunions et autres événements.",
+    image: "/salle-vide.jpg",
+    slug: "location",
+    services: [
+      {
+          name: "Salles de fêtes",
+          descr: "Des espaces adaptés pour vos fêtes et célébrations.",
+          src: "/salle-fete.jpg",
+          slug: "salles-de-fetes",
+      },
+            {
+                name: "Conférences",
+                descr: "Des espaces adaptés pour vos conférences et réunions.",
+                src: "/salle-vide.jpg",
+                slug: "conferences",
+            },
+            {
+                name: "Réunions",
+                descr: "Des espaces adaptés pour vos réunions professionnelles.",
+                src: "/salle-reunion.jpg",
+                slug: "reunions",
+            },
+            {
+                name: "Anniversaires",
+                descr: "Des espaces adaptés pour vos anniversaires.",
+                src: "/salle-reunion.jpg",
+                slug: "anniversaires",
+            },
+        ],
+    },
+    {
+        name: "Cuisine événementielle",
+        descr: "Des prestations culinaires pensées pour accompagner vos événements et réceptions.",
+        image: "/restaurant.jpg",
+        slug: "Event-Catering",
+        services: [
+            {
+                name: "Mariages",
+                descr: "Des prestations culinaires adaptées à vos mariages.",
+                src: "/salle-reunion.jpg",
+                slug: "mariages",
+            },
+            {
+                name: "Réceptions",
+                descr: "Des prestations culinaires adaptées à vos réceptions.",
+                src: "/restaurant.jpg",
+                slug: "receptions",
+            },
+        ],
+    },
+] as const;
