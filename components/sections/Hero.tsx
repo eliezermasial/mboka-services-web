@@ -63,10 +63,10 @@ export function Hero() {
                 via-[#01241f]/90 via-70% to-gold/40 border-none`
             )}/>
 
-            <Container className="relative z-10 flex h-full  max-md:items-center scale-105">
+            <Container className="relative z-10 flex h-full  max-md:items-center scale-105 py-30">
                 <div className="flex flex-col w-full gap-5 max-md:px-0 md:px-3 lg:px-6">
                     <div className="mt-10">
-                        <div className="flex absolute left-4 md:left-6 lg:left-14 top-3 md:-top-1 items-center gap-3
+                        <div className="flex absolute left-4 md:left-6 lg:left-14 top-30 items-center gap-3
                             bg-white/20 px-3 py-1 rounded-xl shadow shadow-onPrimary/20 justify-start z-10"
                         >
                             <span className="text-xs uppercase text-or/80 font-sans font-medium">
