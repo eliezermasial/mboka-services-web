@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { AnimatePresence, motion } from "motion/react";
-import { ChevronLeft, ChevronRight, Dot } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight, Dot } from "lucide-react";
 
 
 export function Events() {
@@ -83,15 +83,16 @@ export function Events() {
                     </div>
 
                     <div className="flex items-center justify-between gap-5 max-lg:flex-col">
-                        
-                        <div className="relative h-30 w-full max-w-180 overflow-hidden rounded-xl md:h-120">
-                            <Link href={`events/${currentEvent.slug}`} >
+                         
+                        <Link href={`events/${currentEvent.slug}`}
+                            className="group relative h-40 w-full max-w-180 overflow-hidden rounded-xl md:h-120"
+                        >
                             <Image
                                 src={currentEvent.image}
                                 alt="Événement"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"
-                                className="object-cover transition-transform duration-500 hover:scale-105"
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
                             />
 
                             <div className="absolute inset-0 bg-black/10" />
@@ -105,18 +106,15 @@ export function Events() {
                             </Badge>
 
                             <div className="absolute inset-x-0 bottom-0 md:bottom-10 z-10 max-md:px-5 md:p-5">
-                                <h2 className="text-2xl md:text-4xl font-bold font-oswald capitalize text-white">
+                                <h2 className="text-2xl hidden md:text-4xl md:inline-flex font-bold font-oswald capitalize text-white">
                                     {currentEvent.name}
                                 </h2>
-                            
-                                <p className=" mt-1 md:mt-3 text-base">
+                                <p className=" mt-1 md:mt-3 max-w-90 text-base text-white">
                                     {currentEvent.descr}
                                 </p>
                             </div>
-                            </Link>
-                        </div>
+                        </Link>
                         
-
                         <div className="flex h-full w-full max-w-full lg:max-w-100 flex-col gap-2">
                             
                             <div className="relative h-80 w-full rounded-3xl lg:max-w-97.5">
@@ -140,10 +138,15 @@ export function Events() {
                                         className="object-cover rounded-xl"
                                     />
                                     
-                                    <div className="absolute inset-0 bg-black/10"/>
-                            
+                                    <div className="absolute inset-0 rounded-xl bg-black/25" />
+                                    <Button className="group rounded-full p-3 absolute top-10 bg-white right-5 shadow
+                                        hover:bg-white hover:scale-105"
+                                    >
+                                        <ArrowUpRight size={20} className="text-primary group-hover:text-gold"/>
+                                    </Button>
+                                    
                                     <div className="absolute inset-x-0 bottom-10 z-10 p-5">
-                                        <h3 className="text-xl font-semibold font-sans capitalize text-white">
+                                        <h3 className="text-2xl font-bold font-oswald capitalize text-white">
                                             {currentService[currentIndexService].name}
                                         </h3>
                                     

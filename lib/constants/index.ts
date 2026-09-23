@@ -106,19 +106,19 @@ export const events = [
             {
                 name: "Conférences",
                 descr: "Des espaces adaptés pour vos conférences et réunions.",
-                src: "/salle-vide.jpg",
+                src: "/evenement.jpg",
                 slug: "conferences",
             },
             {
                 name: "Réunions",
                 descr: "Des espaces adaptés pour vos réunions professionnelles.",
-                src: "/salle-reunion.jpg",
+                src: "/salle-vide.jpg",
                 slug: "reunions",
             },
             {
                 name: "Anniversaires",
                 descr: "Des espaces adaptés pour vos anniversaires.",
-                src: "/salle-reunion.jpg",
+                src: "/anniversaire.jpg",
                 slug: "anniversaires",
             },
         ],
@@ -126,13 +126,13 @@ export const events = [
     {
         name: "Cuisine événementielle",
         descr: "Des prestations culinaires pensées pour accompagner vos événements et réceptions.",
-        image: "/restaurant.jpg",
+        image: "/cuisine.jpg",
         slug: "Event-Catering",
         services: [
             {
                 name: "Mariages",
                 descr: "Des prestations culinaires adaptées à vos mariages.",
-                src: "/salle-reunion.jpg",
+                src: "/cuisine-mariage.jpg",
                 slug: "mariages",
             },
             {

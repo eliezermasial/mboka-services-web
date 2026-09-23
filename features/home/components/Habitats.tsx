@@ -68,7 +68,8 @@ export function Habitats () {
                                 <Badge className="font-oswald">
                                     {"Habitat & construction"}
                                 </Badge>
-                                <Card className="absolute h-36 w-32 right-4 top-4 z-10
+
+                                <Card className="absolute h-36 w-32 right-2 md:right-4 top-4 z-10
                                     border-2 border-white shadow-none"
                                 >
                                     <Image src={item.image} alt={item.title} fill loading="lazy"
