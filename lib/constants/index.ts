@@ -144,3 +144,34 @@ export const events = [
         ],
     },
 ] as const;
+
+export const modeBeauty = {
+  services: [
+    {
+      name: "Coiffure femme",
+      descr: "Coiffures professionnelles",
+      image: "/mode-beauty.jpg",
+    },
+    {
+      name: "Make-up professionnel",
+      descr: "Maquillage professionnel et soigné",
+      image: "/make-up-prof.jpg",
+    },
+    {
+      name: "Make-up événementiel",
+      descr: "Look parfait pour vos événements",
+      image: "/make-up-event.jpg",
+    },
+    {
+      name: "Couture professionnelle",
+      descr: "Création et retouches sur mesure",
+      image: "/mode-beauty2.jpg",
+    },
+  ],
+
+  gallery: [
+    { img: "/mode-beauty2.jpg", alt: "mode et beauté" },
+    { img: "/makeup.jpg", alt: "evenement"},
+    { img: "/make-up-prof.jpg", alt: "make up professionnel"}
+  ],
+} as const;

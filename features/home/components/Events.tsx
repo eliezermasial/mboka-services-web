@@ -98,14 +98,14 @@ export function Events() {
                             <div className="absolute inset-0 bg-black/10" />
 
                             <div className="absolute inset-x-0 bottom-0 h-[55%] bg-linear-to-t
-                                from-primary via-gray-950/45 to-transparent"
+                                from-primary via-gray-950/55 to-transparent"
                             />
 
                             <Badge className="font-oswald">
                                 {currentEvent.name}
                             </Badge>
 
-                            <div className="absolute inset-x-0 bottom-0 md:bottom-10 z-10 max-md:px-5 md:p-5">
+                            <div className="absolute inset-x-0 bottom-3 md:bottom-10 z-10 max-md:px-5 md:p-5">
                                 <h2 className="text-2xl hidden md:text-4xl md:inline-flex font-bold font-oswald capitalize text-white">
                                     {currentEvent.name}
                                 </h2>
@@ -139,6 +139,7 @@ export function Events() {
                                     />
                                     
                                     <div className="absolute inset-0 rounded-xl bg-black/25" />
+
                                     <Button className="group rounded-full p-3 absolute top-10 bg-white right-5 shadow
                                         hover:bg-white hover:scale-105"
                                     >
