@@ -70,7 +70,7 @@ export function Events() {
                             </div>
                         </div>
                         <div className="flex max-md:flex-col scale-100 gap-8 justify-between">
-                            <p className="max-w-2xl leading-relaxed text-black/55 text-base">
+                            <p className="max-w-2xl max-md:text-justify leading-relaxed text-black/55 text-base">
                                 {"Mariage, conférence, réception ou cérémonie libre : choisissez l'espace adapte, puis contactez-nous pour recevoir une proposition selon votre date, votre format et vos besoins."}
                             </p>
                             
