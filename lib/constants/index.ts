@@ -172,6 +172,6 @@ export const modeBeauty = {
   gallery: [
     { img: "/mode-beauty2.jpg", alt: "mode et beauté" },
     { img: "/makeup.jpg", alt: "evenement"},
-    { img: "/make-up-prof.jpg", alt: "make up professionnel"}
+    {img: "/make-up-prof.jpg", alt: "make up professionnel"}
   ],
 } as const;
