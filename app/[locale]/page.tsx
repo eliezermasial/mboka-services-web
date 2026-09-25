@@ -1,8 +1,8 @@
 import { Hero } from "@/components/sections/Hero";
-import { AboutUs } from "@/features/home/components/AboutUs";
 import { Events } from "@/features/home/components/Events";
-import { FashionBeauty } from "@/features/home/components/FashionBeauty";
+import { AboutUs } from "@/features/home/components/AboutUs";
 import { Habitats } from "@/features/home/components/Habitats";
+import { FashionBeauty } from "@/features/home/components/FashionBeauty";
 import { ServiceDomains } from "@/features/home/components/ServiceDomains";
 
 

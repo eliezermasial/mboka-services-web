@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import {  Dot } from "lucide-react";
 import { modeBeauty } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { ChevronLeft, ChevronRight, Dot } from "lucide-react";
 
 
 export function FashionBeauty(){
@@ -14,6 +14,7 @@ export function FashionBeauty(){
     const [isHover, setIsHover] = useState<boolean>(false)
     const [currentIndex, setCurrentImage] = useState<number>(0);
     const [currentIndexGallery, setCurrentIndexGallery] = useState<number>(0);
+    const [startX, setStartX] = useState<number>(0); 
 
     const currentServices = modeBeauty.services[currentIndex];
     const currentGallery = modeBeauty.gallery[currentIndexGallery];
@@ -28,19 +29,42 @@ export function FashionBeauty(){
         setCurrentImage(0);
     }
 
-    const handleNext = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
+    const next = () => {
 
         setCurrentIndexGallery(
             (prev) => Math.min(prev + 1, modeBeauty.gallery.length - 1)
         );
     }
 
-    const handlePrevious = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        setCurrentIndexGallery((prev) => Math.max(prev - 1, 0))
+    const previous = () => {
+        setCurrentIndexGallery(
+            (prev) => Math.max(prev - 1, 0)
+        );
     }
 
+    const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+
+        const value = e.touches[0].clientX;
+
+        setStartX(value);
+    }
+
+    const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+        const endX = e.changedTouches[0].clientX;
+        const distance = endX - startX;
+
+        if(Math.abs(distance) < 50) return;
+
+        if(distance < startX) {
+
+            return next();
+
+        } else {
+            return previous();
+        }
+    } 
+
+    
     return(
         <Section className="bg-white/99  max-md:px-3">
             <Container className="max-md:py-20">
@@ -71,8 +95,9 @@ export function FashionBeauty(){
                         <div className="flex flex-col  w-full justify-center gap-10 md:gap-15 px-2">
                             <div className="group relative lg:mt-20 min-h-100 max-md:scale-105 
                                 shadow-lg rounded-2xl md:zoom-110"
+                                onTouchStart={handleTouchStart}
+                                onTouchEnd={handleTouchEnd}
                             >
-                               
                                 <Image src={ isHover ? currentServices.image : "/makeup.jpg"} alt={currentServices.name} fill loading="lazy"
                                     className="object-cover hidden md:inline-block md:shadow-xl group-hover:scale-103 duration-500 rounded-xl"
                                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -82,27 +107,14 @@ export function FashionBeauty(){
                                     className="object-cover inline-block md:hidden md:shadow-xl group-hover:scale-103 duration-500 rounded-xl"
                                     sizes="(max-width: 768px) 100vw, 50vw"
                                 />
-
-                                <button className="inline-flex md:hidden absolute top-40 left-5
-                                    bg-gray-200/10 rounded-lg p-3 shadow cursor-pointer"
-                                    onClick={handlePrevious}
-                                >
-                                    <ChevronLeft size={20} className="text-gold"/>
-                                </button>
-
-                                <button className="inline-flex md:hidden absolute top-40 right-5
-                                    bg-gray-200/10 rounded-lg shadow p-3 cursor-pointer"
-                                    onClick={handleNext}
-                                >
-                                    <ChevronRight size={20} className="text-gold"/> 
-                                </button>
                             </div>
+
                             <div className="hidden md:flex gap-2">
-                                <Button href="about" className="rounded-lg text-sm md:text-base  px-3 py-3 font-bold
+                                <Button href="mode-beauty" className="rounded-lg text-sm md:text-base  px-3 py-3 font-bold
                                     transition-colors whitespace-nowrap text-white hover:text-white/74
                                     bg-linear-to-r from-primary/78 to-onPrimary hover:from-primary/60"
                                 >
-                                    {"Découvrir mode & beauté"}
+                                    {"Découvrir Nos Styles"}
                                 </Button>
                             </div>
                         </div>
