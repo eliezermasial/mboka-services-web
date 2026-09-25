@@ -33,7 +33,7 @@ export function Habitats () {
                                 >
                                     {"Des solutions d’habitat pensées pour votre quotidien"}
                                 </h2>
-                                <p className="md:max-w-xl mt-10 text-base leading-relaxed text-white/75">
+                                <p className="md:max-w-xl max-md:text-justify mt-10 text-base leading-relaxed text-white/75">
                                     {"De la conception à l’aménagement, nous vous accompagnons dans vos projets avec des services en plomberie, électricité, maçonnerie, peinture, architecture et architecture intérieure."}
                                 </p>
                             </div>

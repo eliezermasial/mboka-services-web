@@ -66,7 +66,7 @@ export function AboutUs() {
                                 Autour de vos besoins
                             </span>
                         </h2>
-                        <p className="max-w-xl text-md font-medium leading-7
+                        <p className="max-w-xl text-md font-medium leading-7 max-md:text-justify
                             text-text font-semidbold sm:text-lg sm:leading-8"
                         >
                             {"Mboka Services est une plateforme professionnelle qui rassemble plusieurs domaines de services dans un seul endroit. Nous facilitons la mise en relation entre vous et notre équipe de professionnels qualifiés."}
