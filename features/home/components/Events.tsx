@@ -48,7 +48,10 @@ export function Events() {
         <Section className="bg-white/90">
             <Container className="max-md:py-15">
                 <div className="flex flex-col gap-15 overflow-x-hidden max-md:scale-105 md:py-10">
-                    <div className="flex flex-col justify-between gap-8 max-md:gap-10">
+                    <motion.div className="flex flex-col justify-between gap-8 max-md:gap-10"
+                        viewport={{ once: true}} transition={{ duration: 0.6}}
+                        initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                    >
                         <div className="flex flex-col items-center md:mb-15">
                             <div className="flex flex-col justify-center max-md:items-center">
                                 <span className="text-onPrimary text-center leading-[1.05] font-pacifico
@@ -80,16 +83,33 @@ export function Events() {
                                 {"Nos evenements"}
                             </Button>
                         </div>
-                    </div>
+                    </motion.div>
 
                     <div className="flex items-center justify-between gap-5 max-lg:flex-col">
-                         
+                        
+                        <div className="flex md:hidden gap-5 w-full bg-white/75 p-2
+                         border border-primary/15 rounded-4xl shadow">
+                            {events.map((event, index) => (
+                                    <button key={event.name}
+                                        className={cn(`rounded-xl p-2 text-sm
+                                            font-bold transition-all w-full duration-100 capitalize hover:text-gold/85`,
+                                            currentIndexEvent === index ?
+                                            "bg-blue-700 rounded-4xl text-white/95 hover:text-none" :
+                                            "text-primary/85"
+                                        )}
+                                        onClick={()=>handleChangeImage(index)}
+                                    >
+                                        {event.name}
+                                </button>
+                            ))}
+                        </div>     
                         <Link href={`events/${currentEvent.slug}`}
-                            className="group relative h-40 w-full max-w-180 overflow-hidden rounded-xl md:h-120"
+                            className="group relative hidden md:inline-block h-40 w-full max-w-180 overflow-hidden rounded-xl md:h-120"
                         >
                             <Image
                                 src={currentEvent.image}
                                 alt="Événement"
+                                loading="lazy"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"
                                 className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -130,36 +150,40 @@ export function Events() {
                                         }}
                                         className="absolute inset-0.5"
                                     >
-                                    <Image
-                                        src={currentService[currentIndexService].src}
-                                        alt="Événement"
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, 50vw"
-                                        className="object-cover rounded-xl"
-                                    />
-                                    
-                                    <div className="absolute inset-0 rounded-xl bg-black/25" />
+                                        <Image
+                                            src={currentService[currentIndexService].src}
+                                            alt="Événement"
+                                            loading="lazy"
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 50vw"
+                                            className="object-cover rounded-xl"
+                                        />
+                                        
+                                        <div className="absolute inset-0 rounded-xl bg-black/25" />
+                                        <Badge className="font-oswald inline-flex md:hidden">
+                                            {currentEvent.name}
+                                        </Badge>
 
-                                    <Button className="group rounded-full p-3 absolute top-10 bg-white right-5 shadow
-                                        hover:bg-white hover:scale-105"
-                                    >
-                                        <ArrowUpRight size={20} className="text-primary group-hover:text-gold"/>
-                                    </Button>
-                                    
-                                    <div className="absolute inset-x-0 bottom-10 z-10 p-5">
-                                        <h3 className="text-2xl font-bold font-oswald capitalize text-white">
-                                            {currentService[currentIndexService].name}
-                                        </h3>
-                                    
-                                        <p className="mt-3 text-base text-white font-sans">
-                                            {currentService[currentIndexService].descr}
-                                        </p>
-                                    </div>
+                                        <Button className="group rounded-full p-3 absolute top-10 bg-white right-5 shadow
+                                            hover:bg-white/85 hover:scale-105"
+                                        >
+                                            <ArrowUpRight size={20} className="text-primary group-hover:text-gold"/>
+                                        </Button>
+
+                                        <div className="absolute inset-x-0 bottom-10 z-10 p-5">
+                                            <h3 className="text-2xl font-bold font-oswald capitalize text-white">
+                                                {currentService[currentIndexService].name}
+                                            </h3>
+                                        
+                                            <p className="mt-3 text-base text-white font-sans">
+                                                {currentService[currentIndexService].descr}
+                                            </p>
+                                        </div>
                                     </motion.div>
                                 </AnimatePresence>
                             </div>
                             
-                            <div  className="flex flex-col gap-5 bg-white/75 rounded-2xl p-5 border border-primary/15 shadow">
+                            <div  className="flex flex-col gap-5 md:bg-white/75 rounded-lg md:rounded-2xl p-2 md:p-5 border md:border-primary/15 shadow">
                                 <div className="flex items-center justify-between">
                                     <div className="inline-flex gap-2">
                                         <span className="text-primary/80 text-md font-bold font-oswald">
@@ -187,13 +211,13 @@ export function Events() {
                                     </div>
                                 </div>
 
-                                <div className="flex gap-3">
+                                <div className="hidden md:flex gap-3">
                                 {events.map((event, index) => (
                                     <button key={event.name}
                                         className={cn(`rounded-xl border border-primary/20 p-2 shadow-sm text-sm
                                             font-bold transition-all w-full text-nowrap duration-100 capitalize hover:text-gold/85`,
                                             currentIndexEvent === index ?
-                                            "bg-primary/65 text-white/85 hover:text-none" :
+                                            "bg-blue-700 text-white/95 hover:text-none" :
                                             "bg-white text-primary/85"
                                         )}
                                         onClick={()=>handleChangeImage(index)}

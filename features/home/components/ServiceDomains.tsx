@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { Dot } from "lucide-react";
+import { motion } from "motion/react";
 import { Link } from "@/i18n/navigation";
 import { domains } from "@/lib/constants";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Card,  CardContent,  CardHeader,  CardParagraphy, CardTitle  } from "@/components/ui/Card";
-import { Dot } from "lucide-react";
 
 
 export function ServiceDomains () {
@@ -16,7 +17,10 @@ export function ServiceDomains () {
             <Container className="max-md:py-30">
                 <div className="flex flex-col gap-15 overflow-x-hidden max-md:scale-105 md:py-10 md:gap-20">
                     <div className="flex items-center flex-col justify-center">
-                        <div className="flex flex-col items-center">
+                        <motion.div className="flex flex-col items-center"
+                            viewport={{ once: true, amount: 0.5}} transition={{ duration: 0.6}}
+                            initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }}
+                        >
                             <span className="text-gold leading-[1.05] text-xs font-pacifico font-medium uppercase tracking-[0.25em]">
                             {"Ce que nous proposons"}
                             </span>
@@ -25,12 +29,14 @@ export function ServiceDomains () {
                                 <Dot size={30} className="text-or" />
                                 <hr className="text-gold/65  w-24"/>
                             </div>
-                        </div>
-                        <h2 className="text-3xl md:text-5xl mt-5 max-w-3xl text-center
+                        </motion.div>
+                        <motion.h2 className="text-3xl md:text-5xl mt-5 max-w-3xl text-center
                             leading-[1.05] text-white font-oswald"
+                            viewport={{ once: true, amount: 0.5}} transition={{ duration: 0.6}}
+                            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
                         >
                             {"Explorez Nos domaines d'expertise"}
-                        </h2>
+                        </motion.h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
                         {domains.map((item) => (
