@@ -1,10 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import { cn } from "@/lib/utils/cn";
 import { Phone } from "lucide-react";
+import { motion } from "motion/react";
+import { Button } from "@/components/ui/Button";
+import { Section } from "@/components/ui/Section";
 import { advantages, images } from "@/lib/constants";
-import { Button } from "../../../components/ui/Button";
-import { Section } from "../../../components/ui/Section";
-import { Container } from "../../../components/ui/Container";
+import { Container } from "@/components/ui/Container";
 
 
 export function AboutUs() {
@@ -15,7 +18,10 @@ export function AboutUs() {
                 <div className="grid grid-cols-1 gap-35 md:gap-25 max-md:py-20 pt-10
                     lg:grid-cols-2 lg:items-center lg:gap-16"
                 >
-                    <div className="relative max-md:scale-105 border-3 border-gold/60 rounded-2xl p-3 pr-0">
+                    <motion.div className="relative max-md:scale-105 border-3 border-gold/60 rounded-2xl p-3 pr-0"
+                        initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.5}} transition={{ duration: 0.6}}
+                    >
                         <div className="rounded-3xl z-10 zoom-120 bg-white shadow-2xl p-3 pt-1">
                             <div className="grid grid-cols-4 grid-rows-3 gap-1">
                                 {images.map((image, index) => (
@@ -52,8 +58,11 @@ export function AboutUs() {
                                 </span>
                             </div>
                         </div>
-                    </div>
-                    <div className="relative md:pl-10 max-md:scale-105 ">
+                    </motion.div>
+                    <motion.div className="relative md:pl-10 max-md:scale-105"
+                        initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.5}} transition={{ duration: 0.6}}
+                    >
                         <div className="flex items-center gap-3">
                             <span className="text-xs font-pacifico font-medium uppercase tracking-[0.25em] text-onPrimary">
                                 {"WHO-WE-ARE"} ?
@@ -109,7 +118,7 @@ export function AboutUs() {
                                 <span>Contact</span>
                             </Button>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </Container>
         </Section>

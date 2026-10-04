@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { cn } from "@/lib/utils/cn";
+import { motion } from "motion/react";
 import { Button } from "../ui/Button";
-import { Section } from "../ui/Section";
 import { Container } from "../ui/Container";
 import { useEffect, useState } from "react";
 import { CircleChevronLeft, ShieldCheck, ThumbsUp } from "lucide-react";
@@ -48,7 +48,7 @@ export function Hero() {
     }, []);
 
     return (
-        <Section className="relative overflow-hidden z-10 max-md:px-3 h-full">
+        <section className="pt-10 sm:pt-15 lg:pt-20 relative overflow-hidden z-10 max-md:px-3 h-full">
             <Image
                 key={currentImageIndex}
                 src={images[currentImageIndex].src}
@@ -74,7 +74,10 @@ export function Hero() {
                             </span>
                         </div>
                         
-                        <div className="md:w-[70%] ">
+                        <motion.div className="md:w-[70%]"
+                            initial={{ opacity: 0, y: 90 }} whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true}} transition={{ duration: 0.6}}
+                        >
                             <h1 className={cn("display-lg leading-tight text-white font-oswald font-bold mt-5")}>
                                 Votre besoin,
                                 <br/>
@@ -82,16 +85,23 @@ export function Hero() {
                                     {"Notre solution."}
                                 </span>
                             </h1>
-                        </div>
-                        <div className="mt-3">
-                            <p  className="text-white/70 text-base leading-relaxed font-medium font-sans">
+                        </motion.div>
+                        <motion.div className="mt-3"
+                            initial={{ opacity: 0, x: -90 }} whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true}} transition={{ duration: 0.6}}
+                        >
+                            <p className="text-white/70 text-base leading-relaxed font-medium font-sans">
                                {"Des services professionnels pour accompagner vos besoins du quotidien,"}
                                <br/>
                                {"vos projets d'envergure et vos événements de prestige."}
                             </p>
-                        </div>
+                        </motion.div>
                     </div>
-                    <div className="flex justify-start gap-5 py-1 mt-3 lg:w-[70%] ">
+
+                    <motion.div className="flex justify-start gap-5 py-1 mt-3 lg:w-[70%] "
+                        initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true}} transition={{ duration: 0.6}}
+                    >
                         <Button className="group bg-gold max-md:w-full hover:bg-or/80 border-2 border-or text-primary">
                             {"RequestQuote"}
                             <span className="transition-transform translate-x-2 duration-400
@@ -105,7 +115,7 @@ export function Hero() {
                         >
                             {"Nous contacter"}
                         </Button>
-                    </div>
+                    </motion.div>
 
                     <div className=" flex max-lg:flex-col mt-3 md:mt-7 lg:mt-15 max-md:items-center gap-3 lg:gap-5 justify-between">
                         {trustStats.map((stat) => {
@@ -113,8 +123,10 @@ export function Hero() {
                             const Icon = stat.icon
 
                             return (
-                                <div key={stat.value} className="flex gap-3 items-center w-full lg:w-[30%] bg-primary 
+                                <motion.div key={stat.value} className="flex gap-3 items-center w-full lg:w-[30%] bg-primary 
                                     rounded-lg shadow-sm shadow-white/15 hover:bg-primary/80  px-6 py-3"
+                                    initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, amount: 0.5}} transition={{ duration: 0.6}}
                                 >
                                     <div className="bg-white/15 border border-gold/15 p-2 rounded-lg">
                                         <Icon size={25} className="text-gold" />
@@ -127,13 +139,13 @@ export function Hero() {
                                             {stat.label}
                                         </span>
                                     </div>
-                                </div>
+                                </motion.div>
                             )
                         })}
                     </div>
                 </div>
             </Container>
-        </Section>
+        </section>
     )
 }
 

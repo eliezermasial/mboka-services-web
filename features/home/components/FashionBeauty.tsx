@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import {  Dot, MoveLeft, MoveRight } from "lucide-react";
 import { modeBeauty } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
+import { AnimatePresence, motion } from "motion/react";
+import {  Dot, MoveLeft, MoveRight } from "lucide-react";
 
 
 export function FashionBeauty(){
@@ -14,7 +15,8 @@ export function FashionBeauty(){
     const [isHover, setIsHover] = useState<boolean>(false)
     const [currentIndex, setCurrentImage] = useState<number>(0);
     const [currentIndexGallery, setCurrentIndexGallery] = useState<number>(0);
-    const [startX, setStartX] = useState<number>(0); 
+    const [startX, setStartX] = useState<number>(0);
+    const [direction, setDirection] = useState<1 | -1>(1); 
 
     const currentServices = modeBeauty.services[currentIndex];
     const currentGallery = modeBeauty.gallery[currentIndexGallery];
@@ -30,6 +32,7 @@ export function FashionBeauty(){
     }
 
     const next = () => {
+        setDirection(1);
 
         setCurrentIndexGallery(
             (prev) => Math.min(prev + 1, modeBeauty.gallery.length - 1)
@@ -37,6 +40,8 @@ export function FashionBeauty(){
     }
 
     const previous = () => {
+        setDirection(-1)
+
         setCurrentIndexGallery(
             (prev) => Math.max(prev - 1, 0)
         );
@@ -69,7 +74,9 @@ export function FashionBeauty(){
         <Section className="bg-white/99  max-md:px-3">
             <Container className="max-md:py-20">
                 <div className="flex flex-col gap-10 lg:gap-20 overflow-hidden max-md:scale-105">
-                    <div className="">
+                    <motion.div viewport={{ once: true}} transition={{ duration: 0.6}}
+                        initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                    >
                         <div className="flex flex-col items-center">
                             <span className="text-xs font-pacifico font-medium uppercase tracking-[0.25em] text-onPrimary">
                                 {"Mode & beauté"} ?
@@ -90,9 +97,12 @@ export function FashionBeauty(){
                                 {"Coiffure, make-up professionnel, make-up événementiel et couture sur mesure notre équipe vous accompagne pour sublimer votre image."}
                             </p>
                         </div>
-                    </div>
+                    </motion.div>
                     <div className="flex max-lg:flex-col  gap-10">
-                        <div className="flex flex-col  w-full justify-center gap-10 md:gap-15 px-2">
+                        <motion.div className="flex flex-col  w-full justify-center gap-10 md:gap-15 px-2"
+                            initial={{ opacity: 0, x: -90 }} whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, amount: 0.5}} transition={{ duration: 0.6}}
+                        >
                             <div className="flex flex-col items-center md:hidden">
                                 <div className="flex items-center gap-5">
                                     <MoveLeft size={20} className="text-gold" />
@@ -103,20 +113,34 @@ export function FashionBeauty(){
                                 </div>
                             </div>
 
-                            <div className="group relative lg:mt-20 min-h-100 max-md:scale-105 
-                                shadow-lg rounded-2xl md:zoom-110"
+                            <div className="group relative lg:mt-20 min-h-105 max-md:scale-105 shadow-lg rounded-2xl md:zoom-110"
                                 onTouchStart={handleTouchStart}
                                 onTouchEnd={handleTouchEnd}
                             >
-                                <Image src={ isHover ? currentServices.image : "/makeup.jpg"} alt={currentServices.name} fill loading="lazy"
-                                    className="object-cover hidden md:inline-block md:shadow-xl group-hover:scale-103 duration-500 rounded-xl"
-                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                <Image src={ isHover ? currentServices.image : "/makeup.jpg"} loading="lazy"
+                                    alt={currentServices.name} fill sizes="(max-width: 768px) 100vw, 50vw"
+                                    className="object-cover hidden md:inline-block md:shadow-xl group-hover:scale-103
+                                    duration-500 rounded-xl"
                                 />
-                                
-                                <Image src={currentGallery.img} alt={currentGallery.alt} fill loading="lazy"
-                                    className="object-cover inline-block md:hidden md:shadow-xl group-hover:scale-103 duration-500 rounded-xl"
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                />
+                                <AnimatePresence mode="wait" initial={false}>
+                                    <motion.div
+                                        key={currentIndexGallery}
+                                        initial={{ x: direction * 100, opacity: 0 }}
+                                        animate={{ x: 0, opacity: 1 }}
+                                        exit={{ x: direction * -100, opacity: 0 }}
+                                        transition={{
+                                            duration: 0.4,
+                                            ease: "easeInOut",
+                                        }}
+                                        className="absolute inset-0.5"
+                                    >
+                                    <Image src={currentGallery.img} alt={currentGallery.alt} fill loading="lazy"
+                                        className="object-cover inline-block md:hidden md:shadow-xl
+                                            group-hover:scale-103 duration-500 rounded-xl"
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                    />
+                                    </motion.div>
+                                </AnimatePresence>
                             </div>
 
                             <div className="hidden md:flex gap-2">
@@ -127,9 +151,12 @@ export function FashionBeauty(){
                                     {"Découvrir Nos Styles"}
                                 </Button>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        <div className="relative lg:pl-10 max-md:scale-105 w-full pb-5">
+                        <motion.div className="relative lg:pl-10 max-md:scale-105 w-full pb-5"
+                        initial={{ opacity: 0, x: 90 }} whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, amount: 0.5}} transition={{ duration: 0.6}}
+                        >
                             
                             <p className="hidden lg:inline-block max-w-xl text-md font-medium 
                                 text-text font-semidbold sm:text-lg sm:leading-8 leading-7"
@@ -176,7 +203,7 @@ export function FashionBeauty(){
                                     {"Découvrir mode & beauté"}
                                 </Button>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </Container>

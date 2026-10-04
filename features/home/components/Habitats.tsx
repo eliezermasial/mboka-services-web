@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { Dot } from "lucide-react";
+import { motion } from "motion/react";
 import { domains} from "@/lib/constants";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -15,7 +18,10 @@ export function Habitats () {
                 <div className="flex flex-col gap-15 overflow-x-hidden max-md:scale-105 md:py-10 md:gap-15">
                     <div className="flex max-md:flex-col p-2 justify-between gap-5 max-md:gap-8">
                         <div>
-                            <div className="flex flex-col justify-center max-md:items-center">
+                            <motion.div className="flex flex-col justify-center max-md:items-center"
+                                viewport={{ once: true, amount: 0.25}} transition={{ duration: 0.6}}
+                                initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }}
+                            >
                                 <span className="text-gold leading-[1.05] font-pacifico
                                     font-medium uppercase tracking-[0.25em] text-xs"
                                 >
@@ -26,33 +32,45 @@ export function Habitats () {
                                     <Dot size={30} className="text-or" />
                                     <hr className="text-gold/65 w-24 lg:w-32"/>
                                 </div>
-                            </div>
+                            </motion.div>
                             <div className="scale-100">
-                                <h2 className="text-3xl mb-5 md:text-5xl mt-5 max-w-3xl 
+                                <motion.h2 className="text-3xl mb-5 md:text-5xl mt-5 max-w-3xl 
                                     font-oswald text-white leading-[1.05] max-md:text-center"
+                                    viewport={{ once: true}} transition={{ duration: 0.6}}
+                                    initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                                 >
                                     {"Des solutions d’habitat pensées pour votre quotidien"}
-                                </h2>
-                                <p className="md:max-w-xl max-md:text-justify mt-10 text-base leading-relaxed text-white/75">
+                                </motion.h2>
+                                <motion.p className="md:max-w-xl max-md:text-justify mt-10 text-base leading-relaxed text-white/75"
+                                    viewport={{ once: true}} transition={{ duration: 0.6}}
+                                    initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
+                                >
                                     {"De la conception à l’aménagement, nous vous accompagnons dans vos projets avec des services en plomberie, électricité, maçonnerie, peinture, architecture et architecture intérieure."}
-                                </p>
+                                </motion.p>
                             </div>
                         </div>
-                        <div className="flex md:items-end-safe mt-3 scale-100">
+                        <motion.div className="flex md:items-end-safe mt-3 scale-100"
+                            viewport={{ once: true}} transition={{ duration: 0.6}}
+                            initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }}
+                        >
                             <Button href="machinery" className="bg-transparent font-oswald font-bold capitalize
                                 text-white/75 border-onPrimary
                                 border-3 hover:bg-onPrimary hover:text-white whitespace-nowrap max-md:w-full  "
                             >
                                 {"Nos services"}
                             </Button>
-                        </div>
+                        </motion.div>
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                         {domains.map((item) => (
+                            <motion.div key={item.number}
+                                viewport={{ once: true, amount: 0.25}} transition={{ duration: 0.6}}
+                                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                            >
                             <Card  className="group relative h-130 w-full p-0.5 md:max-w-97.5 border-2
                                 overflow-hidden rounded-2xl border-b-0 border-dashed hover:shadow-lg delay-200
                                 border-or/55 transition-transform shadow-gray-500/30 scale-100 hover:scale-99"
-                                key={item.number}
+                                
                             >
                                 <Image src={item.image} alt={item.title} fill loading="lazy"
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -98,6 +116,7 @@ export function Habitats () {
                                     </div>
                                 </CardContent>
                             </Card>
+                            </motion.div>
                         ))}
                     </div>
                 </div>

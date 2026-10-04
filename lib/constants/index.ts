@@ -146,32 +146,85 @@ export const events = [
 ] as const;
 
 export const modeBeauty = {
-  services: [
-    {
-      name: "Coiffure femme",
-      descr: "Coiffures professionnelles",
-      image: "/mode-beauty.jpg",
-    },
-    {
-      name: "Make-up professionnel",
-      descr: "Maquillage professionnel et soigné",
-      image: "/make-up-prof.jpg",
-    },
-    {
-      name: "Make-up événementiel",
-      descr: "Look parfait pour vos événements",
-      image: "/make-up-event.jpg",
-    },
-    {
-      name: "Couture professionnelle",
-      descr: "Création et retouches sur mesure",
-      image: "/mode-beauty2.jpg",
-    },
-  ],
+    services: [
+        {
+        name: "Coiffure femme",
+        descr: "Coiffures professionnelles",
+        image: "/mode-beauty.jpg",
+        },
+        {
+        name: "Make-up professionnel",
+        descr: "Maquillage professionnel et soigné",
+        image: "/make-up-prof.jpg",
+        },
+        {
+        name: "Make-up événementiel",
+        descr: "Look parfait pour vos événements",
+        image: "/make-up-event.jpg",
+        },
+        {
+        name: "Couture professionnelle",
+        descr: "Création et retouches sur mesure",
+        image: "/mode-beauty2.jpg",
+        },
+    ],
 
-  gallery: [
-    { img: "/mode-beauty2.jpg", alt: "mode et beauté" },
-    { img: "/makeup.jpg", alt: "evenement"},
-    {img: "/make-up-prof.jpg", alt: "make up professionnel"}
-  ],
+    gallery: [
+        { img: "/makeup.jpg", alt: "evenement"},
+        { img: "/mode-beauty2.jpg", alt: "mode et beauté" },
+        { img: "/make-up-prof.jpg", alt: "make up professionnel"},
+        { img: "/make-up-event.jpg", alt: "make up evenementielle"}
+    ],
 } as const;
+
+export const realisations = [
+  {
+    cat: "Architecture intérieure",
+    domain: "Habitat & Construction",
+    img: "/make-up-event.jpg",
+    alt: "Salon moderne réalisé par Mboka Services",
+    size: "large",
+  },
+  {
+    cat: "Photographie mariage",
+    domain: "Photographie",
+    img: "/makeup.jpg",
+    alt: "Photographie de mariage",
+    size: "tall",
+  },
+  {
+    cat: "Décoration événement",
+    domain: "Événement",
+    img: "/make-up-prof.jpg",
+    alt: "Décoration florale événement",
+    size: "normal",
+  },
+  {
+    cat: "Make-up événementiel",
+    domain: "Mode & Beauté",
+    img: "/mode-beauty2.jpg",
+    alt: "Make-up professionnel",
+    size: "normal",
+  },
+  {
+    cat: "Mariage",
+    domain: "Événement",
+    img: "/new.jpg",
+    alt: "Cérémonie de mariage",
+    size: "tall",
+  },
+  {
+    cat: "Architecture",
+    domain: "Habitat & Construction",
+    img: "/Architecture.jpg",
+    alt: "Salon élégant rénovation",
+    size: "large",
+  },
+  {
+    cat: "Shooting professionnel",
+    domain: "Photographie",
+    img: "/new2.jpg",
+    alt: "Shooting photo professionnel",
+    size: "tall",
+  },
+];
