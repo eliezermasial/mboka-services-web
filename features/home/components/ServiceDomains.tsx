@@ -18,7 +18,7 @@ export function ServiceDomains () {
                 <div className="flex flex-col gap-15 overflow-x-hidden max-md:scale-105 md:py-10 md:gap-20">
                     <div className="flex items-center flex-col justify-center">
                         <motion.div className="flex flex-col items-center"
-                            viewport={{ once: true, amount: 0.5}} transition={{ duration: 0.6}}
+                            viewport={{ once: true, amount: 0.20}} transition={{ duration: 0.6}}
                             initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }}
                         >
                             <span className="text-gold leading-[1.05] text-xs font-pacifico font-medium uppercase tracking-[0.25em]">

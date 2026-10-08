@@ -9,6 +9,14 @@ import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Card, CardContent, CardParagraphy, CardTitle } from "@/components/ui/Card";
 
+/*
+const tabFilters: string[] = [
+    "Tout",
+    "Habitat & Construction",
+    "Photographie",
+    "Événement",
+    "Mode & Beauté"
+] as const;*/
 
 export function OurWork () {
 
@@ -53,6 +61,23 @@ export function OurWork () {
                             </Button>
                         </div>
                     </motion.div>
+
+                    {/*<div className="flex items-center justify-between my-5">
+                        <div className="flex gap-2 items-center flex-wrap">
+                            {tabFilters.map((tab) => (
+                                <button key={tab} className={cn(`px-5 py-2 rounded-full
+                                        text-sm font-sans font-medium  transition-all cursor-pointer border-2
+                                        border-[#F8F9FC]/15 text-gray-400  hover:border-blue-700
+                                        `, isActived === tab ? "bg-blue-700 text-white/95":
+                                        "bg-transparent hover:text-white/95"
+                                    )}
+                                    onClick={() => setIsActived(tab)}
+                                >
+                                    {tab}
+                                </button>
+                            ))}
+                        </div>
+                    </div>*/}
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5 md:mt-10">
                         {realisations.map((item, index) => (
