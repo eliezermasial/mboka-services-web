@@ -3,6 +3,7 @@ import { Events } from "@/features/home/components/Events";
 import { AboutUs } from "@/features/home/components/AboutUs";
 import { OurWork } from "@/features/home/components/OurWork";
 import { Habitats } from "@/features/home/components/Habitats";
+import { HowItWorks } from "@/features/home/components/HowItWorks";
 import { FashionBeauty } from "@/features/home/components/FashionBeauty";
 import { ServiceDomains } from "@/features/home/components/ServiceDomains";
 
@@ -17,6 +18,7 @@ export default function HomePage () {
       <Events />
       <FashionBeauty />
       <OurWork />
+      <HowItWorks />
     </>
   )
 }
