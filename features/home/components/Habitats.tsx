@@ -18,7 +18,7 @@ export function Habitats () {
                 <div className="flex flex-col gap-15 overflow-x-hidden max-md:scale-105 md:py-10 md:gap-15">
                     <div className="flex max-md:flex-col p-2 justify-between gap-5 max-md:gap-8">
                         <div>
-                            <motion.div className="flex flex-col justify-center max-md:items-center"
+                            <motion.div className="flex flex-col justify-center max-md:items-center overflow-hidden"
                                 viewport={{ once: true, amount: 0.25}} transition={{ duration: 0.6}}
                                 initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }}
                             >
@@ -34,8 +34,8 @@ export function Habitats () {
                                 </div>
                             </motion.div>
                             <div className="scale-100">
-                                <motion.h2 className="text-3xl mb-5 md:text-5xl mt-5 max-w-3xl 
-                                    font-oswald text-white leading-[1.05] max-md:text-center"
+                                <motion.h2 className="text-3xl mb-5 md:text-5xl mt-5 max-w-3xl overflow-hidden 
+                                    font-oswald text-white/90 leading-[1.05] max-md:text-center"
                                     viewport={{ once: true}} transition={{ duration: 0.6}}
                                     initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                                 >
@@ -49,7 +49,7 @@ export function Habitats () {
                                 </motion.p>
                             </div>
                         </div>
-                        <motion.div className="flex md:items-end-safe mt-3 scale-100"
+                        <motion.div className="flex md:items-end-safe mt-3 scale-100 overflow-hidden"
                             viewport={{ once: true}} transition={{ duration: 0.6}}
                             initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }}
                         >
@@ -66,6 +66,7 @@ export function Habitats () {
                             <motion.div key={item.number}
                                 viewport={{ once: true, amount: 0.25}} transition={{ duration: 0.6}}
                                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                                className="overflow-hidden"
                             >
                             <Card  className="group relative h-130 w-full p-0.5 md:max-w-97.5 border-2
                                 overflow-hidden rounded-2xl border-b-0 border-dashed hover:shadow-lg delay-200
@@ -96,14 +97,15 @@ export function Habitats () {
                                     />
                                 </Card>
                                 <CardContent className="absolute inset-x-0 bottom-0 z-10 p-5">
-                                    <CardTitle className="text-2xl font-bold font-oswald text-white">
+                                    <CardTitle className="text-2xl font-bold mb-3 font-oswald text-white">
                                         {item.title}
                                     </CardTitle>
-
-                                    <CardParagraphy className="mt-3 text-sm">
-                                        {item.description}
+                                    {item.services.map((service) => (
+                                        <CardParagraphy key={service.name} className="mt-1 text-sm">
+                                        {service.name}
                                     </CardParagraphy>
-
+                                    ))}
+                                    
                                     <div className="group/link mt-3 inline-flex items-center gap-1
                                         font-bold font-sans text-sm uppercase tracking-wide text-gold/95"
                                     >

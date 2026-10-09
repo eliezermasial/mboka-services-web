@@ -6,20 +6,21 @@ import { cn } from "@/lib/utils/cn";
 import { motion } from "motion/react";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
+import { Button } from "@/components/ui/Button";
 
 
 const steps = [
-  { num: "01", title: "Choisissez",
-     desc: "Sélectionnez le service dont vous avez besoin parmi nos 6 domaines."
+  { num: "01", title: "Choisissez votre univers",
+    desc: "Identifiez le domaine qui correspond à votre projet parmi nos 6 expertises."
   },
-  { num: "02", title: "Décrivez",
-     desc: "Expliquez votre besoin à notre équipe via le formulaire."
+  { num: "02", title: "Précisez votre besoin",
+    desc: "Partagez le contexte, vos priorités et le résultat attendu à travers un brief guidé."
   },
-  { num: "03", title: "Contactez-nous",
-     desc: "Choisissez le moyen de contact qui vous convient le mieux."
+  { num: "03", title: "Validez avec un conseiller",
+    desc: "Un membre de notre équipe reprend votre demande avec vous et définit la meilleure approche."
   },
-  { num: "04", title: "Nous vous accompagnons",
-     desc: "Notre équipe vous répond et prend en charge votre demande."
+  { num: "04", title: "Suivez la prise en charge",
+    desc: "Nous coordonnons l’intervention et restons disponibles jusqu’à la finalisation du service."
   },
 ];
 
@@ -31,7 +32,7 @@ export function HowItWorks () {
     <Section className="bg-[#0C1E3C] ">
       <Container className="max-md:py-20">
         <div className="flex flex-col gap-20 overflow-x-hidden max-md:scale-105 md:py-10">
-          
+
           <motion.div className="flex flex-col justify-between gap-8 max-md:gap-10"
             viewport={{ once: true}} transition={{ duration: 0.6}}
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
@@ -52,14 +53,14 @@ export function HowItWorks () {
               </div>
 
               <div className="scale-100 mt-5">
-                <h2 className="text-3xl md:text-5xl max-w-2xl leading-[1.05] font-oswald text-white text-center">
+                <h2 className="text-3xl md:text-5xl max-w-2xl leading-[1.05] font-oswald text-white/90 text-center">
                   {"Comment ça marche ? "}
                 </h2>
               </div>
             </div>
           </motion.div>
           
-          <motion.div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative"
+          <motion.div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative overflow-hidden"
             viewport={{ once: true, amount: 0.20}} transition={{ duration: 0.6}}
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
           >
@@ -93,12 +94,27 @@ export function HowItWorks () {
                 >
                   {step.title}
                 </h3>
-                <p className="max-md:w-[85%] text-center text-sm md:text-base font-sans text-white/60 leading-relaxed">
+                <p className="max-md:w-[85%] text-center text-sm md:text-base
+                  font-sans text-white/60 leading-relaxed"
+                >
                   {step.desc}
                 </p>
-
               </div>
             ))}
+          </motion.div>
+
+          <motion.div className="flex items-center justify-center"
+            viewport={{ once: true, amount: 0.20}} transition={{ duration: 0.6}}
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+          >
+            <Button className="group bg-gold/85 text-primary  border-2 border-or
+              hover:text-white/85 hover:bg-gold/85 transition-color delay-100"
+            >
+              {"Request Quote"}
+              <span className="transition-transform translate-x-2 duration-400 group-hover:translate-x-4">
+                →
+              </span>
+            </Button>
           </motion.div>
         </div>
       </Container>

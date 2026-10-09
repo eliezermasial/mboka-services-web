@@ -18,8 +18,8 @@ export function AboutUs() {
                 <div className="grid grid-cols-1 gap-35 md:gap-25 max-md:py-20 pt-10
                     lg:grid-cols-2 lg:items-center lg:gap-16"
                 >
-                    <motion.div className="relative max-md:scale-105 border-3 border-gold/60 rounded-2xl p-3 pr-0"
-                        initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }}
+                    <motion.div className="relative max-md:scale-105 border-3 overflow-hidden border-gold/60 rounded-2xl p-3 pr-0"
+                        initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.5}} transition={{ duration: 0.6}}
                     >
                         <div className="rounded-3xl z-10 zoom-120 bg-white shadow-2xl p-3 pt-1">
@@ -59,8 +59,8 @@ export function AboutUs() {
                             </div>
                         </div>
                     </motion.div>
-                    <motion.div className="relative md:pl-10 max-md:scale-105"
-                        initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }}
+                    <motion.div className="relative md:pl-10 max-md:scale-105 overflow-hidden"
+                        initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.5}} transition={{ duration: 0.6}}
                     >
                         <div className="flex items-center gap-3">

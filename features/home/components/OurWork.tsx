@@ -3,11 +3,13 @@
 import Image from "next/image";
 import { Dot } from "lucide-react";
 import { motion } from "motion/react";
+import { Badge } from "@/components/ui/Badge";
 import { realisations } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { Card, CardContent, CardParagraphy, CardTitle } from "@/components/ui/Card";
+import { Card, CardContent, CardParagraphy } from "@/components/ui/Card";
+
 
 /*
 const tabFilters: string[] = [
@@ -23,8 +25,8 @@ export function OurWork () {
     return (
         <Section className="bg-gray-900/75">
             <Container className="max-md:py-20">
-                <div className="flex flex-col gap-10 overflow-hidden max-md:scale-105">
-                    <motion.div className="flex max-md:flex-col p-2 justify-between gap-5 max-md:gap-8"
+                <div className="flex flex-col gap-10 overflow-hidden max-md:scale-105 md:pb-10">
+                    <motion.div className="flex items-center flex-col p-2 justify-between gap-0 max-md:gap-8"
                         viewport={{ once: true}} transition={{ duration: 0.6}}
                         initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                     >
@@ -43,22 +45,16 @@ export function OurWork () {
                             </div>
                             <div className="scale-100">
                                 <h2 className="text-3xl mb-5 md:text-5xl mt-5 max-w-3xl 
-                                    font-oswald text-white leading-[1.05] max-md:text-center"
+                                    font-oswald text-white/90 leading-[1.05] max-md:text-center"
                                 >
                                     {"Nos réalisations"}
                                 </h2>
-                                <p className="md:max-w-xl max-md:text-justify mt-10 text-base leading-relaxed text-white/75">
-                                    {"De la conception à l’aménagement, nous vous accompagnons avec des services en plomberie, électricité, maçonnerie, peinture, architecture et architecture intérieure."}
-                                </p>
                             </div>
                         </div>
-                        <div className="flex md:items-end-safe mt-3 scale-100">
-                            <Button href="machinery" className="bg-transparent font-oswald font-bold capitalize
-                                text-white/75 border-gold
-                                border-3 hover:bg-gold hover:text-primary whitespace-nowrap max-md:w-full"
-                            >
-                                {"Voir tous nos services"}
-                            </Button>
+                        <div className="flex md:items-end-safe md:mt-10 scale-100">
+                            <p className="md:max-w-xl text-center text-base leading-relaxed text-white/75">
+                                {"De la conception à l’aménagement, nous vous accompagnons avec des services en plomberie, électricité, maçonnerie, peinture, architecture et architecture intérieure."}
+                            </p>
                         </div>
                     </motion.div>
 
@@ -81,14 +77,13 @@ export function OurWork () {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5 md:mt-10">
                         {realisations.map((item, index) => (
-                        <motion.div initial={{ opacity: 0, y: 90 }} whileInView={{ opacity: 1, y: 0 }}
+                        <motion.div initial={{ opacity: 0, y: 45 }} whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.25}} transition={{ duration: 0.6}} key={`${item.cat}-${index}`}
                         >
                         <Card  className="group relative h-70 w-full md:max-w-97.5 border-2 border-gold/25
                             hover:scale-105 transition-transform scale-100 bg-primary overflow-hidden
                             rounded-xl shadow-gray-50/5 hover:shadow-lg delay-100"   
                         >
-
                             <Image src={item.img} alt={item.alt} fill loading="lazy"
                                 className="object-cover transition-transform duration-500
                                 scale-100 group-hover:scale-110"
@@ -101,12 +96,16 @@ export function OurWork () {
                                 from-gray-950 opacity-100 via-black/80 to-transparent"
                             />
 
-                            <CardContent className="absolute inset-0 bottom-5 flex flex-col gap-1 justify-end p-5">
-                                <CardTitle className="text-gold font-bold capitalize tracking-widest">
+                            <CardContent className="absolute inset-0 bottom-0 flex flex-col gap-1 justify-end p-5">
+                                
+                                <Badge className=" md:hidden md:group-hover:inline-flex">
                                     {item.domain}
-                                </CardTitle>
-                                <CardParagraphy className="font-medium">
+                                </Badge>
+                                <CardParagraphy className="text-xl font-sans font-medium text-white/75">
                                     {item.cat}
+                                </CardParagraphy>
+                                <CardParagraphy className="font-medium text-white/45">
+                                    {item.desc}
                                 </CardParagraphy>
                             </CardContent>
                             
@@ -117,6 +116,18 @@ export function OurWork () {
                         </motion.div>
                         ))}
                     </div>
+
+                    <motion.div className="flex items-center justify-center mt-5 scale-100 overflow-hidden"
+                        viewport={{ once: true, amount: 0.20}} transition={{ duration: 0.6}}
+                        initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                    >
+                        <Button href="" className="bg-gold font-oswald font-bold capitalize
+                            text-primary hover:bg-gold border-white/45 border-2 hover:border-gold/85
+                            hover:text-primary/85 whitespace-nowrap"
+                        >
+                            {"Voir tous nos services"}
+                        </Button>
+                    </motion.div>
                 </div>
             </Container>
         </Section>
