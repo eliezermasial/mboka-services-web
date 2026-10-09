@@ -1,43 +1,100 @@
 "use client";
 
-
-import { Container } from "@/components/ui/Container";
-import { Section } from "@/components/ui/Section";
-import { Dot } from "lucide-react";
+import Image from "next/image";
 import { motion } from "motion/react";
+import image from "@/public/contact.jpg"
+import { Clock3, Dot,} from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { Section } from "@/components/ui/Section";
+import { Container } from "@/components/ui/Container";
+
 
 export function Contact () {
     return (
-        <Section className="bg-primary">
-            <Container>
-                <div>
-                    <motion.div className="flex flex-col justify-between gap-8 max-md:gap-10"
-                        viewport={{ once: true}} transition={{ duration: 0.6}}
-                        initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-                    >
-                        <div className="flex flex-col items-center md:mb-15">
-                            <div className="flex flex-col justify-center max-md:items-center">
-                                <span className="text-gold text-center leading-[1.05] font-pacifico
-                                    font-medium uppercase tracking-[0.25em] text-xs"
-                                >
-                                    {"Prêt à commencer ?"}
-                                </span>
-                                <div className="flex items-center">
-                                    <hr className="text-gold/65 w-24"/>
-                                    <Dot size={30} className="text-or" />
-                                    <hr className="text-gold/65 w-24"/>
-                                </div>
-                            </div>
-                            <div className="scale-100 mt-5">
-                                <h2 className="text-3xl md:text-5xl max-w-2xl leading-[1.05]
-                                    font-oswald text-white text-center">
-                                    {"Vous avez un besoin ?"}
-                                    <br/>
-                                    <span className="text-gold mt-5">Parlons-en.</span>
-                                </h2>
+        <Section className="bg-gray-900/75 py-16 md:py-24">
+            <Container className="max-md:py-10">
+                <div className="flex items-center p-2 justify-center mb-10 gap-5 max-md:gap-8">
+                    <div className="flex flex-col items-start">
+                        <div className="flex flex-col justify-center max-md:items-center">
+                            <span className="text-gold text-center leading-[1.05] font-pacifico
+                                font-medium uppercase tracking-[0.25em] text-xs"
+                            >
+                                {"Prêt à commencer ?"}
+                            </span>
+                            <div className="flex items-center">
+                                <hr className="text-gold/65 w-24"/>
+                                <Dot size={30} className="text-or" />
+                                <hr className="text-gold/65 w-24"/>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
+                </div>
+
+                <div className="grid overflow-hidden rounded-3xl border border-white/2
+                    bg-gray-900/40 shadow-2xl md:min-h-[520px] md:grid-cols-2"
+                >
+                    <div className="relative z-10 flex flex-col justify-center px-6 py-12 sm:px-10 md:px-12 lg:px-14">
+                        
+                        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.7 }} viewport={{ once: true, amount: 0.2 }}
+                        >
+                            <h2 className="mt-5 font-oswald text-3xl leading-tight text-white sm:text-4xl lg:text-5xl">
+                                Vous avez un besoin ?
+                                <span className="mt-2 block text-gold">Parlons-en.</span>
+                            </h2>
+                            <p className="mt-6 max-w-lg text-sm leading-relaxed text-white/70 sm:text-base">
+                                Un projet, un service à rechercher ou une question ?
+                                Décrivez-nous votre besoin et notre équipe vous accompagnera
+                                pour trouver une solution adaptée.
+                            </p>
+                        </motion.div>
+
+                        <motion.div className="mt-8 flex flex-col gap-5 sm:flex-wrap"
+                            initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.7 }} viewport={{ once: true, amount: 0.2 }}
+                        >
+                            <Button href="" className="rounded-lg text-sm md:text-base px-3 py-3 font-bold
+                                transition-colors whitespace-nowrap text-white hover:text-white/74
+                                bg-linear-to-r from-primary/78 to-onPrimary hover:from-primary/60"
+                            >
+                                {"Demander un devis"}
+                            </Button>
+                            
+                            <Button href="/contact" className="group h-12 text-sm md:text-base bg-transparent px-5
+                                border-2 text-onPrimary hover:bg-white/10 hover:text-white gap-2 border-gold/75"
+                            >
+                                Nous Contacter
+                                <span className="transition-transform translate-x-2 duration-400
+                                    text-white/85 group-hover:translate-x-4">
+                                    →
+                                </span>
+                            </Button>
+                        </motion.div>
+
+                        <div className="mt-8 flex items-center gap-3">
+                            <Clock3 className="size-5 shrink-0 text-gold" />
+                            <span className="text-sm text-white/55">
+                                Une démarche simple, rapide et personnalisée.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className="relative min-h-[320px] overflow-hidden
+                        md:min-h-full">
+                        <Image src={image} fill sizes="(max-width: 768px) 100vw, 50vw"
+                            alt="Une professionnelle échangeant au téléphone"
+                            className="object-cover object-center transition-transform duration-700 hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-br from-black/40
+                            via-[#0C1E3C]/50 to-[#0C1E3C]/80"
+                        />
+                        <div className="absolute inset-0 hidden bg-gradient-to-r md:block
+                            from-[#0C1E3C]/70 via-transparent to-transparent"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-b md:hidden
+                            from-transparent via-transparent to-[#0C1E3C]/40"
+                        />
+                    </div>
                 </div>
             </Container>
         </Section>

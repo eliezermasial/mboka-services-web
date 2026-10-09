@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Dot } from "lucide-react";
+import { CircleDashedCheck, Dot } from "lucide-react";
 import { motion } from "motion/react";
 import { Link } from "@/i18n/navigation";
 import { domains } from "@/lib/constants";
@@ -55,13 +55,18 @@ export function ServiceDomains () {
                             <CardContent className="px-6 gap-3 pb-4 inline-flex flex-col">
                                 <CardTitle>{item.title} </CardTitle>
                                 <div>
-                                {item.services.map((service) => (
-                                    <CardParagraphy key={service.name} className="text-white/55 font-normal">
-                                        {service.name}
-                                    </CardParagraphy>
-                                ))}
+                                    {item.services.map((service) => (
+                                        <div key={service.name} className="flex items-center gap-2">
+                                            <CircleDashedCheck size={18} className="text-gray-500/45 
+                                                group-hover:text-gold/25" strokeWidth={1.7}
+                                            />
+                                            <CardParagraphy  className="text-white/55 font-normal">
+                                                {service.name}
+                                            </CardParagraphy>
+                                        </div>
+                                    ))}
                                 </div>
-                                <Link href={""} className="group inline-flex py-1 items-center text-gold/95">
+                                <Link href={""} className="group inline-flex py-1 items-center text-gold/75">
                                     <span>Découvrir</span>
                                     <span className="transition-transform translate-x-2 duration-400 group-hover:translate-x-3">
                                         →
