@@ -76,15 +76,16 @@ export function FashionBeauty(){
                 <div className="flex flex-col gap-10 lg:gap-20 overflow-hidden max-md:scale-105">
                     <motion.div viewport={{ once: true}} transition={{ duration: 0.6}}
                         initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                        className="overflow-hidden"
                     >
                         <div className="flex flex-col items-center">
                             <span className="text-xs font-pacifico font-medium uppercase tracking-[0.25em] text-onPrimary">
                                 {"Mode & beauté"} ?
                             </span>
                             <div className="flex items-center">
-                                <hr className="text-gold/65 w-24"/>
+                                <hr className="text-gold/65 w-20"/>
                                 <Dot size={30} className="text-or" />
-                                <hr className="text-gold/65 w-24"/>
+                                <hr className="text-gold/65 w-20"/>
                             </div>
                         </div>
                         <div className="mt-5">
@@ -99,8 +100,8 @@ export function FashionBeauty(){
                         </div>
                     </motion.div>
                     <div className="flex max-lg:flex-col  gap-10">
-                        <motion.div className="flex flex-col  w-full justify-center gap-10 md:gap-15 px-2"
-                            initial={{ opacity: 0, x: -90 }} whileInView={{ opacity: 1, x: 0 }}
+                        <motion.div className="flex flex-col  w-full justify-center gap-10 md:gap-15 px-2 overflow-hidden"
+                            initial={{ opacity: 0, x: -45 }} whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, amount: 0.5}} transition={{ duration: 0.6}}
                         >
                             <div className="flex flex-col items-center md:hidden">
@@ -132,7 +133,7 @@ export function FashionBeauty(){
                                             duration: 0.4,
                                             ease: "easeInOut",
                                         }}
-                                        className="absolute inset-0.5"
+                                        className="absolute inset-0.5 overflow-hidden"
                                     >
                                     <Image src={currentGallery.img} alt={currentGallery.alt} fill loading="lazy"
                                         className="object-cover inline-block md:hidden md:shadow-xl
@@ -153,7 +154,7 @@ export function FashionBeauty(){
                             </div>
                         </motion.div>
 
-                        <motion.div className="relative lg:pl-10 max-md:scale-105 w-full pb-5"
+                        <motion.div className="relative lg:pl-10 max-md:scale-105 w-full pb-5 overflow-hidden"
                         initial={{ opacity: 0, x: 90 }} whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, amount: 0.5}} transition={{ duration: 0.6}}
                         >

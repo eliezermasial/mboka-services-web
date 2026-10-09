@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
+import { WhyUs } from "@/features/home/components/WhyUs";
 import { Events } from "@/features/home/components/Events";
 import { AboutUs } from "@/features/home/components/AboutUs";
 import { OurWork } from "@/features/home/components/OurWork";
@@ -14,6 +15,7 @@ export default function HomePage () {
       <Hero />
       <AboutUs />
       <ServiceDomains />
+      <WhyUs />
       <Habitats />
       <Events />
       <FashionBeauty />

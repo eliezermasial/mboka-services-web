@@ -49,42 +49,62 @@ export const domains = [
   {
     number: "01",
     title: "Habitat et construction",
-    description: "Plomberie, électricité, maçonnerie, peinture, architecture...",
+    services: [
+      {name: "Plomberie & électricité"},
+      {name: "maçonnerie & peinture"},
+      {name: "architecture..."}
+    ],
     image: "/habitat.jpg",
     href: "/services/habitat-construction",
   },
   {
     number: "02",
     title: "Technique et maintenance",
-    description: "Maintenance électronique, automobile et climatisation.",
+    services: [
+      {name: "Maintenance électronique"},
+      {name:"automobile & climatisation."}
+    ],
     image: "/tech.jpg",
     href: "/services/technique-maintenance",
   },
   {
     number: "03",
     title: "Photographie",
-    description: "Studio, événement, mariage et shooting professionnel.",
+    services: [
+      {name: "Studio & shooting professionnel."},
+      {name: "événement & mariage "}
+    ],
     image: "/shooting.jpg",
     href: "/services/photographie",
   },
   {
     number: "04",
     title: "Mode et beauté",
-    description: "Coiffure, make-up et couture professionnelle.",
+    services: [
+      {name: "Coiffure, make-up"},
+      {name: "couture professionnelle."}
+    ],
     image: "/beaute.jpg",
     href: "/services/mode-beaute",
   },
   {
     number: "05",
     title: "Événement",
-    description: "Location, cuisine événementielle et accompagnement.",
+    services: [
+      {name: "Location"},
+      {name: "cuisine événementielle"},
+      {name: "accompagnement"}
+    ],
     image: "/evenement.jpg",
     href: "/services/evenement",
   },
   {
     number: "06",
     title: "Services sociaux",
-    description: "Nettoyage professionnel et billetterie de voyage.",
+    services: [
+      {name: "Nettoyage professionnel",},
+      {name:"billetterie de voyage."}
+    ],
     image: "/artisan1.jpg",
     href: "/services/services-sociaux",
   },
@@ -181,6 +201,7 @@ export const realisations = [
   {
     cat: "Architecture intérieure",
     domain: "Habitat & Construction",
+    desc: "Choisissez le moyen de contact qui vous convient le mieux.",
     img: "/make-up-event.jpg",
     alt: "Salon moderne réalisé par Mboka Services",
     size: "large",
@@ -188,6 +209,7 @@ export const realisations = [
   {
     cat: "Photographie mariage",
     domain: "Photographie",
+    desc: "Choisissez le moyen de contact qui vous convient le mieux.",
     img: "/makeup.jpg",
     alt: "Photographie de mariage",
     size: "tall",
@@ -195,6 +217,7 @@ export const realisations = [
   {
     cat: "Décoration événement",
     domain: "Événement",
+    desc: "Choisissez le moyen de contact qui vous convient le mieux.",
     img: "/make-up-prof.jpg",
     alt: "Décoration florale événement",
     size: "normal",
@@ -202,6 +225,7 @@ export const realisations = [
   {
     cat: "Make-up événementiel",
     domain: "Mode & Beauté",
+    desc: "Choisissez le moyen de contact qui vous convient le mieux.",
     img: "/mode-beauty2.jpg",
     alt: "Make-up professionnel",
     size: "normal",
@@ -209,6 +233,7 @@ export const realisations = [
   {
     cat: "Mariage",
     domain: "Événement",
+    desc: "Choisissez le moyen de contact qui vous convient le mieux.",
     img: "/new.jpg",
     alt: "Cérémonie de mariage",
     size: "tall",
@@ -216,15 +241,10 @@ export const realisations = [
   {
     cat: "Architecture",
     domain: "Habitat & Construction",
+    desc: "Choisissez le moyen de contact qui vous convient le mieux.",
     img: "/Architecture.jpg",
     alt: "Salon élégant rénovation",
     size: "large",
   },
-  {
-    cat: "Shooting professionnel",
-    domain: "Photographie",
-    img: "/new2.jpg",
-    alt: "Shooting photo professionnel",
-    size: "tall",
-  },
 ];
+

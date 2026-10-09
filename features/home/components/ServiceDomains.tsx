@@ -16,7 +16,7 @@ export function ServiceDomains () {
         <Section className="bg-primary/55">
             <Container className="max-md:py-30">
                 <div className="flex flex-col gap-15 overflow-x-hidden max-md:scale-105 md:py-10 md:gap-20">
-                    <div className="flex items-center flex-col justify-center">
+                    <div className="mb-5 flex items-center flex-col justify-center">
                         <motion.div className="flex flex-col items-center"
                             viewport={{ once: true, amount: 0.20}} transition={{ duration: 0.6}}
                             initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }}
@@ -30,8 +30,8 @@ export function ServiceDomains () {
                                 <hr className="text-gold/65  w-24"/>
                             </div>
                         </motion.div>
-                        <motion.h2 className="text-3xl md:text-5xl mt-5 max-w-3xl text-center
-                            leading-[1.05] text-white font-oswald"
+                        <motion.h2 className="text-3xl md:text-5xl mt-5 max-w-3xl text-center overflow-hidden
+                            leading-[1.05] text-white/90 font-oswald"
                             viewport={{ once: true, amount: 0.5}} transition={{ duration: 0.6}}
                             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
                         >
@@ -54,10 +54,13 @@ export function ServiceDomains () {
                             </CardHeader>
                             <CardContent className="px-6 gap-3 pb-4 inline-flex flex-col">
                                 <CardTitle>{item.title} </CardTitle>
-
-                                <CardParagraphy className="text-white/55">
-                                            {item.description}
-                                </CardParagraphy>
+                                <div>
+                                {item.services.map((service) => (
+                                    <CardParagraphy key={service.name} className="text-white/55 font-normal">
+                                        {service.name}
+                                    </CardParagraphy>
+                                ))}
+                                </div>
                                 <Link href={""} className="group inline-flex py-1 items-center text-gold/95">
                                     <span>Découvrir</span>
                                     <span className="transition-transform translate-x-2 duration-400 group-hover:translate-x-3">

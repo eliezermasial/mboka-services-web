@@ -48,7 +48,7 @@ export function Events() {
         <Section className="bg-white/90">
             <Container className="max-md:py-15">
                 <div className="flex flex-col gap-15 overflow-x-hidden max-md:scale-105 md:py-10">
-                    <motion.div className="flex flex-col justify-between gap-8 max-md:gap-10"
+                    <motion.div className="flex flex-col justify-between gap-8 max-md:gap-10 overflow-hidden"
                         viewport={{ once: true}} transition={{ duration: 0.6}}
                         initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                     >
@@ -60,16 +60,16 @@ export function Events() {
                                     {"Événements"}
                                 </span>
                                 <div className="flex items-center">
-                                    <hr className="text-gold/65 w-24"/>
+                                    <hr className="text-gold/65 w-15"/>
                                     <Dot size={30} className="text-or" />
-                                    <hr className="text-gold/65 w-24"/>
+                                    <hr className="text-gold/65 w-15"/>
                                 </div>
                             </div>
                             <div className="scale-100 mt-5">
                                 <h2 className="text-3xl md:text-5xl max-w-2xl leading-[1.05]
                                     font-oswald text-primary text-center">
                                     {"Des espaces prêts pour recevoir, célébrer et réunir"}
-                                </h2>
+                                </h2> 
                             </div>
                         </div>
                         <div className="flex max-md:flex-col scale-100 gap-8 justify-between">
@@ -148,7 +148,7 @@ export function Events() {
                                             duration: 0.4,
                                             ease: "easeInOut",
                                         }}
-                                        className="absolute inset-0.5"
+                                        className="absolute inset-0.5 overflow-hidden"
                                     >
                                         <Image
                                             src={currentService[currentIndexService].src}
