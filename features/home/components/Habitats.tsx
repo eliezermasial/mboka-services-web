@@ -106,11 +106,11 @@ export function Habitats () {
                                     </CardParagraphy>
                                     ))}
                                     
-                                    <div className="group/link mt-3 inline-flex items-center gap-1
+                                    <div className="mt-3 inline-flex items-center gap-1 translate-x-1
                                         font-bold font-sans text-sm uppercase tracking-wide text-gold/95"
                                     >
                                         <span>{"view more"}</span>
-                                        <span className="group-hover/link:translate-x-1
+                                        <span className="group-hover:translate-x-3
                                             transition-transform duration-300"
                                         >
                                             →

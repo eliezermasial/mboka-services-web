@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { Dot } from "lucide-react";
 import { motion } from "motion/react";
-import { Badge } from "@/components/ui/Badge";
 import { realisations } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
@@ -97,13 +96,18 @@ export function OurWork () {
                             />
 
                             <CardContent className="absolute inset-0 bottom-0 flex flex-col gap-1 justify-end p-5">
-                                
-                                <Badge className=" md:hidden md:group-hover:inline-flex">
-                                    {item.domain}
-                                </Badge>
+                                <div className="absolute md:hidden md:group-hover:inline-flex left-4 top-4 z-10">
+                                    <span className={`inline-flex rounded-md font-bold px-2 py-1 bg-gray-600/45
+                                        tracking-[0.12em] text-[11px] uppercase text-gold`}
+                                    >
+                                        {item.domain}
+                                    </span>
+                                </div>
+
                                 <CardParagraphy className="text-xl font-sans font-medium text-white/75">
                                     {item.cat}
                                 </CardParagraphy>
+
                                 <CardParagraphy className="font-medium text-white/45">
                                     {item.desc}
                                 </CardParagraphy>
@@ -121,7 +125,7 @@ export function OurWork () {
                         viewport={{ once: true, amount: 0.20}} transition={{ duration: 0.6}}
                         initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                     >
-                        <Button href="" className="bg-gold font-oswald font-bold capitalize
+                        <Button href="" className="bg-gold max-md:w-full font-oswald font-bold capitalize
                             text-primary hover:bg-gold border-white/45 border-2 hover:border-gold/85
                             hover:text-primary/85 whitespace-nowrap"
                         >

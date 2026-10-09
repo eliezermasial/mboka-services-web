@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { WhyUs } from "@/features/home/components/WhyUs";
 import { Events } from "@/features/home/components/Events";
+import { Contact } from "@/features/home/components/Contact";
 import { AboutUs } from "@/features/home/components/AboutUs";
 import { OurWork } from "@/features/home/components/OurWork";
 import { Habitats } from "@/features/home/components/Habitats";
@@ -21,6 +22,7 @@ export default function HomePage () {
       <FashionBeauty />
       <OurWork />
       <HowItWorks />
+      <Contact />
     </>
   )
 }

@@ -70,10 +70,9 @@ export function WhyUs() {
                                 <h2 className="text-3xl md:text-5xl max-w-2xl leading-[1.05]
                                     text-white/90 text-center font-oswald"
                                 >
-                                    {"Pourquoi choisir "}
-                                    <span className="text-onPrimary">{"Mboka Services ?"}</span>
+                                    {"Pourquoi nous Choisir ?"}
                                 </h2>
-                                <p className="md:max-w-xl mt-3 text-center leading-relaxed text-white/75">
+                                <p className="md:max-w-xl mt-1 text-center leading-relaxed text-white/55">
                                     {"De la conception à l’aménagement, nous vous accompagnons avec des services en plomberie, électricité, maçonnerie, peinture, architecture et architecture intérieure."}
                                 </p>
                             </div>

@@ -31,7 +31,7 @@ export function HowItWorks () {
   return (
     <Section className="bg-[#0C1E3C] ">
       <Container className="max-md:py-20">
-        <div className="flex flex-col gap-20 overflow-x-hidden max-md:scale-105 md:py-10">
+        <div className="flex flex-col gap-15 overflow-x-hidden max-md:scale-105 md:py-10">
 
           <motion.div className="flex flex-col justify-between gap-8 max-md:gap-10"
             viewport={{ once: true}} transition={{ duration: 0.6}}
@@ -54,20 +54,19 @@ export function HowItWorks () {
 
               <div className="scale-100 mt-5">
                 <h2 className="text-3xl md:text-5xl max-w-2xl leading-[1.05] font-oswald text-white/90 text-center">
-                  {"Comment ça marche ? "}
+                  {"Réservé en moins de 3 minutes "}
                 </h2>
               </div>
             </div>
           </motion.div>
           
-          <motion.div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative overflow-hidden"
-            viewport={{ once: true, amount: 0.20}} transition={{ duration: 0.6}}
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-          >
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative overflow-hidden">
             {steps.map((step, index) => (
-              <div key={step.num} className="flex flex-col items-center justify-center relative">
-
-                <div className={cn(`w-20 h-20 rounded-full flex items-center justify-center
+              <motion.div key={step.num} className="flex flex-col items-center relative"
+                viewport={{ once: true, amount: 0.20}} transition={{ duration: 0.6}}
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+              >
+                <div className={cn(`w-18 h-18 rounded-full flex items-center justify-center
                   mx-auto mb-6 relative  border border-white/15 transition-all delay-100`,
                     index === 0 && hoveredIndex !== null && hoveredIndex !== 0
                     ? "bg-white/8 text-white" : index === hoveredIndex || (index === 0 && hoveredIndex === null)
@@ -94,20 +93,18 @@ export function HowItWorks () {
                 >
                   {step.title}
                 </h3>
-                <p className="max-md:w-[85%] text-center text-sm md:text-base
-                  font-sans text-white/60 leading-relaxed"
-                >
+                <p className="max-md:w-[85%] text-center text-sm md:text-base font-sans text-white/60 leading-relaxed">
                   {step.desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </motion.div>
+          </div>
 
-          <motion.div className="flex items-center justify-center"
+          <motion.div className="flex items-center justify-center mt-3"
             viewport={{ once: true, amount: 0.20}} transition={{ duration: 0.6}}
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
           >
-            <Button className="group bg-gold/85 text-primary  border-2 border-or
+            <Button className="group bg-gold/85 max-md:w-full text-primary  border-2 border-or
               hover:text-white/85 hover:bg-gold/85 transition-color delay-100"
             >
               {"Request Quote"}
