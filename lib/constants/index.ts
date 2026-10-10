@@ -44,6 +44,70 @@ export const advantages = [
     "Événement",
     "Services sociaux"
 ] as const;
+export const services = [
+  {
+    number: "01",
+    title: "Habitat et construction",
+    services: [
+      {name: "Plomberie & électricité"},
+      {name: "maçonnerie & peinture"},
+      {name: "architecture..."}
+    ],
+    image: "/habitat.jpg",
+    href: "/services/habitat-construction",
+  },
+  {
+    number: "02",
+    title: "Technique et maintenance",
+    services: [
+      {name: "Maintenance électronique"},
+      {name:"automobile & climatisation."}
+    ],
+    image: "/tech.jpg",
+    href: "/services/technique-maintenance",
+  },
+  {
+    number: "03",
+    title: "Photographie",
+    services: [
+      {name: "Studio & shooting professionnel."},
+      {name: "événement & mariage "}
+    ],
+    image: "/shooting.jpg",
+    href: "/services/photographie",
+  },
+  {
+    number: "04",
+    title: "Mode et beauté",
+    services: [
+      {name: "Coiffure, make-up"},
+      {name: "couture professionnelle."}
+    ],
+    image: "/beaute.jpg",
+    href: "/services/mode-beaute",
+  },
+  {
+    number: "05",
+    title: "Événement",
+    services: [
+      {name: "Location"},
+      {name: "cuisine événementielle"},
+      {name: "accompagnement"}
+    ],
+    image: "/evenement.jpg",
+    href: "/services/evenement",
+  },
+  {
+    number: "06",
+    title: "Services sociaux",
+    services: [
+      {name: "Nettoyage professionnel",},
+      {name:"billetterie de voyage."}
+    ],
+    image: "/artisan1.jpg",
+    href: "/services/services-sociaux",
+  },
+] as const;
 
 export const domains = [
   {
