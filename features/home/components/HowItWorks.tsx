@@ -4,9 +4,9 @@ import { useState } from "react";
 import { Dot } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 import { motion } from "motion/react";
+import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
 
 
 const steps = [
@@ -105,10 +105,11 @@ export function HowItWorks () {
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
           >
             <Button className="group bg-gold/85 max-md:w-full text-primary  border-2 border-or
-              hover:text-white/85 hover:bg-gold/85 transition-color delay-100"
+              hover:text-white/85 hover:bg-gold/85 transition-color delay-200
+              transition-all duration-300 hover:-translate-y-1"
             >
               {"Request Quote"}
-              <span className="transition-transform translate-x-2 duration-400 group-hover:translate-x-4">
+              <span className="transition-transform translate-x-2 duration-400 group-hover:translate-x-3">
                 →
               </span>
             </Button>

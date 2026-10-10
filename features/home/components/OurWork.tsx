@@ -127,7 +127,8 @@ export function OurWork () {
                     >
                         <Button href="" className="bg-gold max-md:w-full font-oswald font-bold capitalize
                             text-primary hover:bg-gold border-white/45 border-2 hover:border-gold/85
-                            hover:text-primary/85 whitespace-nowrap"
+                            hover:text-primary/85 whitespace-nowrap
+                            transition-all duration-300 hover:-translate-y-1"
                         >
                             {"Voir tous nos services"}
                         </Button>

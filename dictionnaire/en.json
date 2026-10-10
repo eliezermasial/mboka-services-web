@@ -1,16 +1,27 @@
 {
-    "HomePage": {
-    "title": "More power for your land,",
-    "sous-title": "more future for your harvest.",
-    "description": "Integrated agricultural solutions for professionals, farms and modern farmers.",
-    "experience": "Over 40 years of experience",
-    "AgriculturalService": "Agricultural service",
-    "Sales": "Sales",
-    "Rental": "Rental",
-    "Repair": "Repair",
-    "Yearsexperience": "Years of experience",
-    "Commitment": "Commitment",
-    "Working-title": "Over 40 years working alongside farmers",
-    "Working-description": "For more than four decades, we combine experience, technology and specialised service to offer solutions tailored to every farm."
+  "Navigation": {
+    "home": "Home",
+    "services": "Services",
+    "events": "Events",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "HomePage": {
+    "badge": "Excellence & Operational Concierge Services",
+    "title": "Your needs,",
+    "sous-title": "Our solution.",
+    "description": "Professional services to support your everyday needs, major projects and prestigious events.",
+    "customer": "customer satisfaction rate",
+    "successful": "successful interventions",
+    "guaranteed": "guaranteed availability"
+  },
+  "btn": {
+    "quote": "Request a Quote",
+    "contact": "Contact Us"
+  },
+  "NotFound": {
+    "title": "This page doesn't exist",
+    "description": "Oops! The page you're looking for could not be found or may have been moved. Go back to the homepage to continue browsing.",
+    "back": "Go back to the previous page"
   }
 }

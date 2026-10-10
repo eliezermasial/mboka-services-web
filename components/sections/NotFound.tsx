@@ -2,6 +2,7 @@
 
 import { MoveLeft } from "lucide-react";
 import { Section } from "../ui/Section";
+import { useTranslations } from "next-intl";
 import { Container } from "../ui/Container";
 import { useRouter } from "@/i18n/navigation";
 
@@ -10,6 +11,8 @@ export function NotFound () {
 
     const router = useRouter();
 
+    const t = useTranslations("NotFound");
+    
     return (
 
         <Section className="relative isolate overflow-hidden bg-[#F8F9FC]">
@@ -29,12 +32,10 @@ export function NotFound () {
 
                     <div className="relative -mt-4 flex flex-col items-center gap-4">
                         <h1 className="font-oswald font-bold leading-tight text-primary text-3xl sm:text-4xl md:text-5xl">
-                            {"Cette page n'existe pas"}
+                            {t("title")}
                         </h1>
                         <p className="max-w-md text-sm leading-relaxed text-text/75 sm:text-base">
-                            {`Oups ! La page que vous recherchez est introuvable ou
-                            a peut-être été déplacée. Retournez à l'accueil pour
-                            poursuivre votre navigation.`}
+                            {t("description")}
                         </p>
                     </div>
                     <button className="group relative mt-4 inline-flex items-center gap-3 px-6 rounded-xl bg-primary
@@ -44,7 +45,7 @@ export function NotFound () {
                         onClick={() => router.back()}
                     >
                         <MoveLeft size={20} className="transition-transform duration-300 group-hover:-translate-x-1"/>
-                        Retourner à la page précédente
+                        {t("back")}
                     </button>
                 </div>
             </Container>

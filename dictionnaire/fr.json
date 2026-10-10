@@ -1,16 +1,27 @@
 {
-    "HomePage": {
-    "title": "More power for your land,",
-    "sous-title": "more future for your harvest.",
-    "description": "Integrated agricultural solutions for professionals, farms and modern farmers.",
-    "experience": "Over 40 years of experience",
-    "AgriculturalService": "Agricultural service",
-    "Sales": "Sales",
-    "Rental": "Rental",
-    "Repair": "Repair",
-    "Yearsexperience": "Years of experience",
-    "Commitment": "Commitment",
-    "Working-title": "Over 40 years working alongside farmers",
-    "Working-description": "For more than four decades, we combine experience, technology and specialised service to offer solutions tailored to every farm."
+  "Navigation": {
+    "home": "Accueil",
+    "services": "Services",
+    "events": "Événements",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "HomePage": {
+    "badge": "Excellence & conciergerie opérationnelle",
+    "title": "Votre besoin,",
+    "sous-title": "Notre solution.",
+    "description": "Des services professionnels pour accompagner vos besoins du quotidien, vos projets d'envergure et vos événements de prestige.",
+    "customer": "taux de satisfaction",
+    "successful": "interventions réussies",
+    "guaranteed": "disponibilité garantie"
+  },
+  "btn": {
+    "quote": "Demander un devis",
+    "contact": "Nous contacter"
+  },
+  "NotFound": {
+    "title": "Cette page n'existe pas",
+    "description": "Oups ! La page que vous recherchez est introuvable ou a peut-être été déplacée. Retournez à l'accueil pour poursuivre votre navigation.",
+    "back": "Retourner à la page précédente"
   }
 }
