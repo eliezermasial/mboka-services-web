@@ -9,10 +9,12 @@ import { Container } from "../ui/Container";
 import { TextAlignCenter } from "lucide-react";
 import { Navigation } from "../navigations/Navigation";
 import { MenuMobile } from "../navigations/MenuMobil";
+import { useTranslations } from "next-intl";
 
 
 export function Header () {
 
+    const btn = useTranslations("btn");
     const [openMobil, setIsOpen] = useState<boolean>(false);
 
     const handleOpenMobil = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -40,7 +42,7 @@ export function Header () {
                     <Button href="" className="bg-linear-to-r from-primary/78 to-onPrimary hover:from-primary/60 px-6 py-2
                         rounded-xl text-white/85 font-oswald shadow shadow-onPrimary/35 transition-all"
                     >
-                        Request Quote
+                        {btn("quote")}
                     </Button>
                     <button className={cn(`flex justify-center items-center lg:hidden p-1
                         border-2 border-primary/25 rounded-lg shadow shadow-primary/15 cursor-pointer`)}

@@ -14,7 +14,7 @@ export function FormHeader ({className}: FormProps) {
                 <Search size={20}
                     className="absolute left-3 top-1/2 -translate-y-1/2 text-primary/15"
                 />
-                <input type="text" name="search" placeholder="... recherge"
+                <input type="text" name="search" placeholder="... Search"
                     className={cn(`bg-transparent px-10 w-52 py-1 rounded-xl border border-primary/15
                         shadow-primary/5 text-text/35 font-sans font-normal shadow outline-0
                         focus:outline-1 focus:outline-onPrimary/15 capitalize`

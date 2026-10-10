@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { Button } from "../ui/Button";
 import { Container } from "../ui/Container";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { CircleChevronLeft, ShieldCheck, ThumbsUp } from "lucide-react";
 
 
@@ -16,25 +17,15 @@ const images = [
 ] as const;
 
 const trustStats = [
-  {
-    value: "+ 1200",
-    label: "interventions réussies",
-    icon: ShieldCheck,
-  },
-  {
-    value: "+ 99.4%",
-    label: "taux de satisfaction",
-    icon: ThumbsUp,
-  },
-  {
-    value: "24h/7j",
-    label: "disponibilité garantie",
-    icon: CircleChevronLeft,
-  },
+  { value: "+ 1200", label: "successful", icon: ShieldCheck},
+  { value: "+ 99.4%", label: "customer", icon: ThumbsUp},
+  { value: "24h/7j", label: "guaranteed", icon: CircleChevronLeft},
 ] as const;
 
 export function Hero() {
 
+    const t = useTranslations("HomePage");
+    const btn = useTranslations("btn");
     const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
 
     useEffect(() => {
@@ -48,15 +39,11 @@ export function Hero() {
     }, []);
 
     return (
+
         <section className="pt-10 sm:pt-15 lg:pt-20 relative overflow-hidden z-10 max-md:px-3 h-full">
-            <Image
-                key={currentImageIndex}
-                src={images[currentImageIndex].src}
-                alt="image champs"
-                fill
-                loading="eager"
-                className={cn(`block absolute inset-y-0 w-full bg-cover max-md:object-cover bg-center bg-no-repeat scale-115`,
-                    "scale-115", "animate-fade-in"
+            <Image key={currentImageIndex} src={images[currentImageIndex].src} fill loading="eager" alt="image champs"
+                className={cn(`block absolute inset-y-0 w-full bg-cover max-md:object-cover
+                    bg-center bg-no-repeat scale-115`, "scale-115", "animate-fade-in"
                 )}
             />
             <div className={cn(`absolute inset-0 bg-linear-to-r from-primary/75
@@ -70,7 +57,7 @@ export function Hero() {
                             bg-white/20 px-3 py-1 rounded-xl shadow shadow-onPrimary/20 justify-start z-10"
                         >
                             <span className="text-xs uppercase text-or/80 font-sans font-medium">
-                                excellence & conciergerie operrationnelle
+                                {t("badge")}
                             </span>
                         </div>
                         
@@ -79,10 +66,10 @@ export function Hero() {
                             viewport={{ once: true}} transition={{ duration: 0.6}}
                         >
                             <h1 className={cn("display-lg leading-tight text-white font-oswald font-bold mt-5")}>
-                                Votre besoin,
+                                {t("title")}
                                 <br/>
                                 <span className={cn("block leading-tight font-oswald  text-gold mt-1")}>
-                                    {"Notre solution."}
+                                    {t("sous-title")}
                                 </span>
                             </h1>
                         </motion.div>
@@ -91,9 +78,12 @@ export function Hero() {
                             viewport={{ once: true}} transition={{ duration: 0.6}}
                         >
                             <p className="text-white/70 text-base leading-relaxed font-medium font-sans">
-                               {"Des services professionnels pour accompagner vos besoins du quotidien,"}
-                               <br/>
-                               {"vos projets d'envergure et vos événements de prestige."}
+                                {t("description").split(",").map((text, index, array) => (
+                                    <span key={index}>
+                                        {text.trim()}
+                                        {index < array.length - 1 && <br />}
+                                    </span>
+                                ))}
                             </p>
                         </motion.div>
                     </div>
@@ -102,24 +92,25 @@ export function Hero() {
                         initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true}} transition={{ duration: 0.6}}
                     >
-                        <Button className="group bg-gold max-md:w-full hover:bg-or/80 border-2 border-or text-primary">
-                            {"RequestQuote"}
-                            <span className="transition-transform translate-x-2 duration-400
+                        <Button className="group bg-gold max-md:w-full text-nowrap hover:bg-or/80
+                            border-2 border-or text-primary"
+                        >
+                            {btn("quote")}
+                            <span className="transition-transform translate-x-1 md:translate-x-2 duration-400
                                 group-hover:translate-x-3"
                             >
                                 →
                             </span>
                         </Button>
                         <Button className="bg-onprimary/20 max-md:w-full hover:bg-white/20 border-2
-                            hover:text-gold border-onPrimary text-white/90 max-md:text-nowrap"
+                            hover:text-gold border-onPrimary text-white/85 max-md:text-nowrap"
                         >
-                            {"Nous contacter"}
+                            {btn("contact")}
                         </Button>
                     </motion.div>
 
                     <div className=" flex max-lg:flex-col mt-3 md:mt-7 lg:mt-15 max-md:items-center gap-3 lg:gap-5 justify-between">
                         {trustStats.map((stat) => {
-
                             const Icon = stat.icon
 
                             return (
@@ -136,7 +127,7 @@ export function Hero() {
                                             {stat.value}
                                         </span>
                                         <span className="text-sm font-medium font-sans text-white/55">
-                                            {stat.label}
+                                            {t(stat.label)}
                                         </span>
                                     </div>
                                 </motion.div>
