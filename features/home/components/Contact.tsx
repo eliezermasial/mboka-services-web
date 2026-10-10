@@ -13,8 +13,8 @@ export function Contact () {
     return (
         <Section className="bg-gray-900/75 py-16 md:py-24">
             <Container className="max-md:py-10">
-                <div className="flex items-center p-2 justify-center mb-10 gap-5 max-md:gap-8">
-                    <div className="flex flex-col items-start">
+                <div className="flex items-center p-2 justify-center mb-15 gap-5 max-md:gap-8">
+                    <div className="flex flex-col items-center">
                         <div className="flex flex-col justify-center max-md:items-center">
                             <span className="text-gold text-center leading-[1.05] font-pacifico
                                 font-medium uppercase tracking-[0.25em] text-xs"
@@ -27,6 +27,14 @@ export function Contact () {
                                 <hr className="text-gold/65 w-24"/>
                             </div>
                         </div>
+                        <div>
+                            <h2 className="mt-5 font-oswald text-3xl text-center leading-tight
+                                text-white sm:text-4xl lg:text-5xl"
+                            >
+                                Vous avez un besoin ?
+                                <span className="mt-2 block text-gold">Parlons-en.</span>
+                            </h2>
+                        </div>
                     </div>
                 </div>
 
@@ -38,10 +46,6 @@ export function Contact () {
                         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7 }} viewport={{ once: true, amount: 0.2 }}
                         >
-                            <h2 className="mt-5 font-oswald text-3xl leading-tight text-white sm:text-4xl lg:text-5xl">
-                                Vous avez un besoin ?
-                                <span className="mt-2 block text-gold">Parlons-en.</span>
-                            </h2>
                             <p className="mt-6 max-w-lg text-sm leading-relaxed text-white/70 sm:text-base">
                                 Un projet, un service à rechercher ou une question ?
                                 Décrivez-nous votre besoin et notre équipe vous accompagnera

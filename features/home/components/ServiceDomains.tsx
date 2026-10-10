@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { CircleDashedCheck, Dot } from "lucide-react";
 import { motion } from "motion/react";
 import { Link } from "@/i18n/navigation";
-import { domains } from "@/lib/constants";
+import { services } from "@/lib/constants";
 import { Section } from "@/components/ui/Section";
+import { CircleDashedCheck, Dot } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { Card,  CardContent,  CardHeader,  CardParagraphy, CardTitle  } from "@/components/ui/Card";
+import { Card, CardContent, CardHeader, CardParagraphy, CardTitle} from "@/components/ui/Card";
 
 
 export function ServiceDomains () {
@@ -39,7 +39,7 @@ export function ServiceDomains () {
                         </motion.h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
-                        {domains.map((item) => (
+                        {services.map((item) => (
                         <Card key={item.title} className="group grid bg-white/4 gap-5 border-onPrimary/25 shadow-sm
                             hover:border-gold/10 hover:bg-white/8 shadow-onPrimary/8 transition-all delay-100"
                         >
