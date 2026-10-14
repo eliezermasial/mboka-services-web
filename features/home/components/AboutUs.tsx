@@ -4,6 +4,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils/cn";
 import { Phone } from "lucide-react";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { advantages, images } from "@/lib/constants";
@@ -12,13 +13,17 @@ import { Container } from "@/components/ui/Container";
 
 export function AboutUs() {
 
+    const t = useTranslations("AboutUs");
+    const btn = useTranslations("btn");
+
     return (
         <Section className="bg-white/99 max-md:px-3">
             <Container>
                 <div className="grid grid-cols-1 gap-35 md:gap-25 max-md:py-20 pt-10
                     lg:grid-cols-2 lg:items-center lg:gap-16"
                 >
-                    <motion.div className="relative max-md:scale-105 border-3 overflow-hidden border-gold/60 rounded-2xl p-3 pr-0"
+                    <motion.div className="relative max-md:scale-105 border-3 overflow-hidden
+                        border-gold/60 rounded-2xl p-3 pr-0"
                         initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.5}} transition={{ duration: 0.6}}
                     >
@@ -39,7 +44,7 @@ export function AboutUs() {
                                 ))}
                             </div>
                         </div>
-                        <div className="absolute -bottom-8 left-0 z-20 flex items-center gap-4 px-5 py-4
+                        <div className="absolute -bottom-1 left-0 z-20 flex items-center gap-4 px-5 py-4
                             bg-primary shadow-lg sm:px-6 sm:py-5 rounded-2xl"
                         >
                             <div className="flex h-14 w-14 shrink-0 items-center justify-center 
@@ -51,10 +56,12 @@ export function AboutUs() {
                             </div>
                             <div>
                                 <span className="block text-[10px] font-bold uppercase tracking-[0.25em] text-gold">
-                                    {"WHO-WE-ARE"}
+                                    {t("badge")}
                                 </span>
-                                <span className="mt-1 block whitespace-nowrap text-sm font-bold text-white font-oswald sm:text-base">
-                                    {"Disponibité"}
+                                <span className="mt-1 block whitespace-nowrap text-sm font-bold
+                                    text-white font-oswald sm:text-base"
+                                >
+                                    {t("availability")}
                                 </span>
                             </div>
                         </div>
@@ -65,20 +72,20 @@ export function AboutUs() {
                     >
                         <div className="flex items-center gap-3">
                             <span className="text-xs font-pacifico font-medium uppercase tracking-[0.25em] text-onPrimary">
-                                {"WHO-WE-ARE"} ?
+                                {t("badge")} ?
                             </span>
                         </div>
                         <h2 className="text-3xl my-5 md:text-5xl font-oswald font-bold leading-[1.15] text-primary">
-                            Des services pensés
+                            {t("title")}
                             <br />
                             <span className="text-onPrimary">
-                                Autour de vos besoins
+                                {t("subtitle")}
                             </span>
                         </h2>
                         <p className="max-w-xl text-md font-medium leading-7 max-md:text-justify
                             text-text font-semidbold sm:text-lg sm:leading-8"
                         >
-                            {"Mboka Services est une plateforme professionnelle qui rassemble plusieurs domaines de services dans un seul endroit. Nous facilitons la mise en relation entre vous et notre équipe de professionnels qualifiés."}
+                            {t("description")}
                         </p>
                         <div className="mt-8 flex flex-col gap-5 ">
                             {advantages.map((advantage, index) => (
@@ -97,7 +104,7 @@ export function AboutUs() {
                                     <span dir="auto" className="font-bold align-inherit leading-5
                                         xs:text-sm sm:text-base text-primary"
                                     >
-                                        {advantage}
+                                        {t(advantage)}
                                     </span>
                                 </div>
                             ))}
@@ -107,10 +114,10 @@ export function AboutUs() {
                                 transition-colors whitespace-nowrap text-white hover:text-white/74
                                 bg-linear-to-r from-primary/78 to-onPrimary hover:from-primary/60"
                             >
-                                {"Qui sommes-nous ?"}
+                                {btn("Who-are-we")}
                             </Button>
 
-                            <Button className="inline-flex items-center gap-2 rounded-lg bg-transparent px-3 py-3
+                            <Button href="contact" className="inline-flex items-center gap-2 rounded-lg bg-transparent px-3 py-3
                                 border border-primary/10 font-bold hover:border-primary/30 text-onPrimary text-sm
                                 md:text-base shadow-none transition-colors hover:underline hover:bg-transparent"
                             >

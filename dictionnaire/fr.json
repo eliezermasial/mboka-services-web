@@ -17,11 +17,82 @@
   },
   "btn": {
     "quote": "Demander un devis",
-    "contact": "Nous contacter"
+    "contact": "Nous contacter",
+    "Who-are-we": "Qui sommes-nous ?"
   },
   "NotFound": {
     "title": "Cette page n'existe pas",
     "description": "Oups ! La page que vous recherchez est introuvable ou a peut-être été déplacée. Retournez à l'accueil pour poursuivre votre navigation.",
     "back": "Retourner à la page précédente"
+  },
+  "AboutUs": {
+    "badge": "Qui sommes-nous",
+    "availability": "Disponibilité",
+    "title": "Des services pensés,",
+    "subtitle": "Autour de vos besoins",
+    "description": "Mboka Services est une plateforme professionnelle qui rassemble plusieurs domaines de services dans un seul endroit. Nous facilitons la mise en relation entre vous et notre équipe de professionnels qualifiés.",
+    "Housing-Construction": "Habitat & construction",
+    "Technical-Maintenance": "Technique & maintenance",
+    "Photography": "Photographie",
+    "Fashion-Beauty": "Mode & beauté",
+    "Events": "Événement",
+    "Social-Services": "Services sociaux"
+  },
+  "ServiceDomains": {
+    "title": "Explorez nos domaines d'expertise"
+  },
+  "Contact": {
+    "badge": "Prêt à commencer ?",
+    "title": "Vous avez un besoin ?",
+    "subtitle": "Parlons-en.",
+    "description": "Un projet, un service à rechercher ou une question ? Décrivez-nous votre besoin et notre équipe vous accompagnera pour trouver une solution adaptée.",
+    "promise": "Une démarche simple, rapide et personnalisée."
+  },
+  "HowItWorks": {
+    "badge": "Simple & rapide",
+    "title": "Votre service en moins de 3 minutes",
+    "steps": [
+      {
+        "num": "01",
+        "title": "Choisissez votre univers",
+        "desc": "Identifiez le domaine qui correspond à votre projet parmi nos 6 domaines d'expertise."
+      },
+      {
+        "num": "02",
+        "title": "Précisez votre besoin",
+        "desc": "Décrivez votre projet, vos priorités et le résultat attendu grâce à notre formulaire de demande."
+      },
+      {
+        "num": "03",
+        "title": "Échangez avec un conseiller",
+        "desc": "Un membre de notre équipe étudie votre demande avec vous et définit la meilleure approche."
+      },
+      {
+        "num": "04",
+        "title": "Suivez votre prise en charge",
+        "desc": "Nous coordonnons votre demande et restons à votre écoute jusqu'à la réalisation du service."
+      }
+    ]
+  },
+  "HeroRequestQuote": {
+    "title": "Votre projet mérite",
+    "subtitle": "une solution sur mesure.",
+    "description": "Remplissez ce formulaire en quelques minutes et recevez un devis personnalisé. Notre équipe vous recontactera rapidement pour donner vie à votre projet.",
+    "imageAlt": "Un professionnel préparant un projet",
+    "trustStats": [
+      {
+        "value": "Réponse rapide",
+        "label": "Sous 24 h"
+      },
+      {
+        "value": "Devis gratuit",
+        "label": "Libre"
+      },
+      {
+        "value": "Accompagnement",
+        "label": "Personnalisé"
+      }
+    ]
   }
 }
+

@@ -37,13 +37,14 @@ export const images = [
 ] as const;
 
 export const advantages = [
-    "Habitat & construction",
-    "Technique & maintenance",
-    "Photographie",
-    "Mode & beauté",
-    "Événement",
-    "Services sociaux"
+  "Housing-Construction",
+  "Technical-Maintenance",
+  "Photography",
+  "Fashion-Beauty",
+  "Events",
+  "Social-Services"
 ] as const;
+
 export const services = [
   {
     number: "01",

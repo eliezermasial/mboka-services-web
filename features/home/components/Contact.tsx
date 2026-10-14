@@ -4,14 +4,15 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import image from "@/public/contact.jpg"
 import { Clock3, Dot,} from "lucide-react";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { useTranslations } from "next-intl";
 
 
 export function Contact () {
 
+    const  t = useTranslations("Contact");
     const btn = useTranslations("btn");
 
     return (
@@ -24,7 +25,7 @@ export function Contact () {
                                 <span className="text-gold text-center leading-[1.05] font-pacifico
                                     font-medium uppercase tracking-[0.25em] text-xs"
                                 >
-                                    {"Prêt à commencer ?"}
+                                    {t("badge")}
                                 </span>
                                 <div className="flex items-center">
                                     <hr className="text-gold/65 w-24"/>
@@ -36,8 +37,10 @@ export function Contact () {
                                 <h2 className="mt-5 font-oswald text-3xl text-center leading-tight
                                     text-white sm:text-4xl lg:text-5xl"
                                 >
-                                    Vous avez un besoin ?
-                                    <span className="mt-2 block text-gold">Parlons-en.</span>
+                                    {t("title")}
+                                    <span className="mt-2 block text-gold">
+                                        {t("subtitle")}
+                                    </span>
                                 </h2>
                             </div>
                         </div>
@@ -51,9 +54,7 @@ export function Contact () {
                                 transition={{ duration: 0.7 }} viewport={{ once: true, amount: 0.2 }}
                             >
                                 <p className="max-w-lg text-sm leading-relaxed text-white/70 sm:text-base">
-                                    Un projet, un service à rechercher ou une question ?
-                                    Décrivez-nous votre besoin et notre équipe vous accompagnera
-                                    pour trouver une solution adaptée.
+                                    {t("description")}
                                 </p>
                             </motion.div>
 
@@ -84,7 +85,7 @@ export function Contact () {
                             <div className="mt-8 flex items-center gap-3">
                                 <Clock3 className="size-5 shrink-0 text-gold" />
                                 <span className="text-sm text-white/55">
-                                    Une démarche simple, rapide et personnalisée.
+                                    {t("promise")}
                                 </span>
                             </div>
                         </div>

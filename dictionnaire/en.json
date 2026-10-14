@@ -17,11 +17,81 @@
   },
   "btn": {
     "quote": "Request a Quote",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "Who-are-we": "Who are we ?"
   },
   "NotFound": {
     "title": "This page doesn't exist",
     "description": "Oops! The page you're looking for could not be found or may have been moved. Go back to the homepage to continue browsing.",
     "back": "Go back to the previous page"
+  },
+  "AboutUs": {
+    "badge": "Who We Are",
+    "availability": "Availability",
+    "title": "Services designed,",
+    "subtitle": "Around your needs",
+    "description": "Mboka Services is a professional platform that brings together services across multiple fields in one place. We make it easy for you to connect with our team of qualified professionals.",
+    "Housing-Construction": "Housing & Construction",
+    "Technical-Maintenance": "Technical Services & Maintenance",
+    "Photography": "Photography",
+    "Fashion-Beauty": "Fashion & Beauty",
+    "Events": "Events",
+    "Social-Services": "Social Services"
+  },
+  "ServiceDomains": {
+    "title": "Explore Our Areas of Expertise"
+  },
+  "Contact": {
+    "badge": "Ready to Get Started?",
+    "title": "Do You Have a Need?",
+    "subtitle": "Let's Talk.",
+    "description": "Have a project, need help finding a service, or have a question? Tell us what you need, and our team will help you find a solution tailored to your requirements.",
+    "promise": "A simple, fast, and personalized process."
+  },
+  "HowItWorks": {
+    "badge": "Simple & Fast",
+    "title": "Request Your Service in Under 3 Minutes",
+    "steps": [
+      {
+        "num": "01",
+        "title": "Choose Your Service Area",
+        "desc": "Select the area that best matches your project from our 6 areas of expertise."
+      },
+      {
+        "num": "02",
+        "title": "Tell Us What You Need",
+        "desc": "Describe your project, priorities, and expected outcome using our request form."
+      },
+      {
+        "num": "03",
+        "title": "Speak with an Advisor",
+        "desc": "A member of our team reviews your request with you and determines the best approach."
+      },
+      {
+        "num": "04",
+        "title": "Follow Your Request",
+        "desc": "We coordinate your request and remain available to support you until the service is completed."
+      }
+    ]
+  },
+  "HeroRequestQuote": {
+    "title": "Your project deserves",
+    "subtitle": "a tailored solution.",
+    "description": "Fill out this form in just a few minutes and receive a personalized quote. Our team will get back to you shortly to help bring your project to life.",
+    "imageAlt": "A professional preparing a project",
+    "trustStats": [
+      {
+        "value": "Quick response",
+        "label": "Within 24 hours"
+      },
+      {
+        "value": "Free quote",
+        "label": "No commitment"
+      },
+      {
+        "value": "Dedicated support",
+        "label": "Personalized"
+      }
+    ]
   }
 }

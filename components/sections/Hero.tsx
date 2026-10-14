@@ -45,6 +45,7 @@ export function Hero() {
                 className={cn(`block absolute inset-y-0 w-full bg-cover max-md:object-cover
                     bg-center bg-no-repeat scale-115`, "scale-115", "animate-fade-in"
                 )}
+                sizes="100w"
             />
             <div className={cn(`absolute inset-0 bg-linear-to-r from-primary/75
                 via-[#01241f]/90 via-70% to-gold/40 border-none`
@@ -92,7 +93,7 @@ export function Hero() {
                         initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true}} transition={{ duration: 0.6}}
                     >
-                        <Button className="group bg-gold max-md:w-full text-nowrap hover:bg-or/80
+                        <Button href="request-quote" className="group bg-gold max-md:w-full text-nowrap hover:bg-or/80
                             border-2 border-or text-primary"
                         >
                             {btn("quote")}
@@ -102,7 +103,7 @@ export function Hero() {
                                 →
                             </span>
                         </Button>
-                        <Button className="bg-onprimary/20 max-md:w-full hover:bg-white/20 border-2
+                        <Button href="contact" className="bg-onprimary/20 max-md:w-full hover:bg-white/20 border-2
                             hover:text-gold border-onPrimary text-white/85 max-md:text-nowrap"
                         >
                             {btn("contact")}
