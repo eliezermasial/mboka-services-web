@@ -1,9 +1,9 @@
-import { usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils/cn";
 import { useLocale } from "next-intl";
+import { usePathname, useRouter } from "@/i18n/navigation";
+
 
 const languages:("fr" | "en")[] = ["fr", "en"];
-
 
 export function LanguageSwitcher () {
     const router= useRouter()
@@ -11,7 +11,10 @@ export function LanguageSwitcher () {
     const locale = useLocale()
     
     const handleChangeLanguage = (locale: "fr" | "en") => {
-        return router.replace(pathName,{locale});
+        return router.replace(
+            pathName,
+            {locale, scroll: false}
+        );
     }
     return (
         <div role="group" aria-label="Language selector"
@@ -21,8 +24,8 @@ export function LanguageSwitcher () {
         >
             {languages.map((language) => (
                 <button key={language}
-                        className={cn(`flex items-center gap-1 rounded px-2 py-0.5 uppercase cursor-pointer text-[11px]
-                        font-semibold transition-all duration-200`,
+                        className={cn(`flex items-center gap-1 rounded px-2 py-0.5 uppercase
+                        cursor-pointer text-[11px] font-semibold transition-all duration-200`,
                         locale === language ? "bg-white/80 text-primary" : "text-white/70 hover:text-white"
                     )}
                     aria-current={locale === language ? "true": undefined}

@@ -4,27 +4,23 @@ import { useState } from "react";
 import { Dot } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 
 
-const steps = [
-  { num: "01", title: "Choisissez votre univers",
-    desc: "Identifiez le domaine qui correspond à votre projet parmi nos 6 expertises."
-  },
-  { num: "02", title: "Précisez votre besoin",
-    desc: "Partagez le contexte, vos priorités et le résultat attendu à travers un brief guidé."
-  },
-  { num: "03", title: "Validez avec un conseiller",
-    desc: "Un membre de notre équipe reprend votre demande avec vous et définit la meilleure approche."
-  },
-  { num: "04", title: "Suivez la prise en charge",
-    desc: "Nous coordonnons l’intervention et restons disponibles jusqu’à la finalisation du service."
-  },
-];
-
 export function HowItWorks () {
+
+  const t = useTranslations("HowItWorks");
+
+  const btn = useTranslations("btn");
+
+  const steps = t.raw("steps") as {
+    num: string,
+    title: string,
+    desc: string
+  }[];
 
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -42,7 +38,7 @@ export function HowItWorks () {
                 <span className="text-gold text-center leading-[1.05] font-pacifico
                   font-medium uppercase tracking-[0.25em] text-xs"
                 >
-                  {"Simple & rapide"}
+                  {t("badge")}
                 </span>
 
                 <div className="flex items-center">
@@ -53,8 +49,10 @@ export function HowItWorks () {
               </div>
 
               <div className="scale-100 mt-5">
-                <h2 className="text-3xl md:text-5xl max-w-2xl leading-[1.05] font-oswald text-white/90 text-center">
-                  {"Réservé en moins de 3 minutes "}
+                <h2 className="text-3xl md:text-5xl max-w-2xl leading-[1.05]
+                  font-oswald text-white/90 text-center"
+                >
+                  {t("title")}
                 </h2>
               </div>
             </div>
@@ -93,7 +91,9 @@ export function HowItWorks () {
                 >
                   {step.title}
                 </h3>
-                <p className="max-md:w-[85%] text-center text-sm md:text-base font-sans text-white/60 leading-relaxed">
+                <p className="max-md:w-[85%] text-center text-sm md:text-base
+                  font-sans text-white/60 leading-relaxed"
+                >
                   {step.desc}
                 </p>
               </motion.div>
@@ -108,7 +108,7 @@ export function HowItWorks () {
               hover:text-white/85 hover:bg-gold/85 transition-color delay-200
               transition-all duration-300 hover:-translate-y-1"
             >
-              {"Request Quote"}
+              {btn("quote")}
               <span className="transition-transform translate-x-2 duration-400 group-hover:translate-x-3">
                 →
               </span>

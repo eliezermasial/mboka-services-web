@@ -4,14 +4,17 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { Link } from "@/i18n/navigation";
 import { services } from "@/lib/constants";
+import { useTranslations } from "next-intl";
 import { Section } from "@/components/ui/Section";
 import { CircleDashedCheck, Dot } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { Card, CardContent, CardHeader, CardParagraphy, CardTitle} from "@/components/ui/Card";
+import {Card,CardContent,CardHeader,CardParagraphy,CardTitle} from "@/components/ui/Card";
 
 
 export function ServiceDomains () {
-    
+
+    const t = useTranslations("ServiceDomains");
+
     return (
         <Section className="bg-primary/55">
             <Container className="max-md:py-30">
@@ -21,13 +24,15 @@ export function ServiceDomains () {
                             viewport={{ once: true, amount: 0.20}} transition={{ duration: 0.6}}
                             initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }}
                         >
-                            <span className="text-gold leading-[1.05] text-xs font-pacifico font-medium uppercase tracking-[0.25em]">
-                            {"Ce que nous proposons"}
+                            <span className="text-gold leading-[1.05] text-xs font-pacifico
+                                font-medium uppercase tracking-[0.25em]"
+                            >
+                                {"Ce que nous proposons"}
                             </span>
                             <div className="flex items-center">
-                                <hr className="text-gold/65 w-24"/>
+                                <hr className="text-gold/65 w-25"/>
                                 <Dot size={30} className="text-or" />
-                                <hr className="text-gold/65  w-24"/>
+                                <hr className="text-gold/65  w-25"/>
                             </div>
                         </motion.div>
                         <motion.h2 className="text-3xl md:text-5xl mt-5 max-w-3xl text-center overflow-hidden
@@ -35,7 +40,7 @@ export function ServiceDomains () {
                             viewport={{ once: true, amount: 0.5}} transition={{ duration: 0.6}}
                             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
                         >
-                            {"Explorez Nos domaines d'expertise"}
+                            {t("title")}
                         </motion.h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">

@@ -10,15 +10,6 @@ import { Container } from "@/components/ui/Container";
 import { Card, CardContent, CardParagraphy } from "@/components/ui/Card";
 
 
-/*
-const tabFilters: string[] = [
-    "Tout",
-    "Habitat & Construction",
-    "Photographie",
-    "Événement",
-    "Mode & Beauté"
-] as const;*/
-
 export function OurWork () {
 
     return (
